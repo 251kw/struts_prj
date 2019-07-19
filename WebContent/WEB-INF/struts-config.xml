@@ -106,7 +106,7 @@
             name="SampleActionForm"
             scope="request"
             cancellable="true">
-            <forward name="success" path="/jsp/SampleResult"/>
+            <forward name="success" path="/jsp/SampleResult.jsp"/>
         </action>
 
         <action

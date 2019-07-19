@@ -21,6 +21,8 @@
 
 package sample;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
@@ -35,96 +37,104 @@ import org.apache.struts.action.ActionMessage;
  */
 public class SampleActionForm extends ActionForm {
 
-    // ------------------------------------------------------ Instance Variables
+	// ------------------------------------------------------ Instance Variables
 
-    /** Name */
-    private String userName = null;
+	/** Name */
+	private String userName = null;
 
-    /** Hidden */
-    private String hidden = null;
+	/** Hidden */
+	private String hidden = null;
 
-    // ------------------------------------------------------------ Constructors
+	// ------------------------------------------------------------ Constructors
 
-    /**
-     * Constructor for MultiboxActionForm.
-     */
-    public SampleActionForm() {
-        super();
-    }
+	/**
+	 * Constructor for MultiboxActionForm.
+	 */
+	public SampleActionForm() {
+		super();
+	}
 
-    // ---------------------------------------------------------- Public Methods
+	// ---------------------------------------------------------- Public Methods
 
-    /**
-     * Reset all properties to their default values.
-     *
-     * @param mapping The mapping used to select this instance
-     * @param request The servlet request we are processing
-     */
-    public void reset(ActionMapping mapping, HttpServletRequest request) {
+	/**
+	 * Reset all properties to their default values.
+	 *
+	 * @param mapping The mapping used to select this instance
+	 * @param request The servlet request we are processing
+	 */
+	public void reset(ActionMapping mapping, HttpServletRequest request) {
 
-        this.userName = null;
-        this.hidden = null;
-    }
+		this.userName = null;
+		this.hidden = null;
 
-    /**
-     * Validate the properties that have been set from this HTTP request,
-     * and return an <code>ActionMessages</code> object that encapsulates any
-     * validation errors that have been found.  If no errors are found, return
-     * <code>null</code> or an <code>ActionMessages</code> object with no
-     * recorded error messages.
-     *
-     * @param mapping The mapping used to select this instance
-     * @param request The servlet request we are processing
-     *
-     * @return ActionMessages if any validation errors occurred
-     */
-    public ActionErrors validate(
-        ActionMapping mapping,
-        HttpServletRequest request) {
+		//文字化け対策
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}
 
-        ActionErrors errors = new ActionErrors();
+	/**
+	 * Validate the properties that have been set from this HTTP request,
+	 * and return an <code>ActionMessages</code> object that encapsulates any
+	 * validation errors that have been found.  If no errors are found, return
+	 * <code>null</code> or an <code>ActionMessages</code> object with no
+	 * recorded error messages.
+	 *
+	 * @param mapping The mapping used to select this instance
+	 * @param request The servlet request we are processing
+	 *
+	 * @return ActionMessages if any validation errors occurred
+	 */
+	public ActionErrors validate(
+			ActionMapping mapping,
+			HttpServletRequest request) {
 
-        // Name must be entered
-        if ((userName == null) || (userName.length() < 1)) {
-            errors.add("name", new ActionMessage("errors.name.required"));
-        }
+		ActionErrors errors = new ActionErrors();
 
-        return (errors);
+		// Name must be entered
+		if ((userName == null) || (userName.length() < 1)) {
+			errors.add("name", new ActionMessage("errors.name.required"));
+		}
 
-    }
+		return (errors);
 
-    // -------------------------------------------------------------- Properties
+	}
 
-    /**
-     * Returns the hidden.
-     * @return String
-     */
-   public String getHidden() {
-        return hidden;
-    }
+	// -------------------------------------------------------------- Properties
 
-    /**
-     * Returns the name.
-     * @return String
-     */
-    public String getUserName() {
-        return userName;
-    }
+	/**
+	 * Returns the hidden.
+	 * @return String
+	 */
+	public String getHidden() {
+		return hidden;
+	}
 
-    /**
-     * Sets the hidden.
-     * @param hidden The hidden to set
-     */
-    public void setHidden(String hidden) {
-        this.hidden = hidden;
-    }
+	/**
+	 * Returns the name.
+	 * @return String
+	 */
+	public String getUserName() {
+		return userName;
+	}
 
-    /**
-     * Sets the name.
-     * @param name The name to set
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+	/**
+	 * Sets the hidden.
+	 * @param hidden The hidden to set
+	 */
+	public void setHidden(String hidden) {
+		this.hidden = hidden;
+	}
+
+	/**
+	 * Sets the name.
+	 * @param name The name to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 }
