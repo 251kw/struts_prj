@@ -41,7 +41,7 @@ public class SampleActionForm extends ActionForm {
     private String userName = null;
 
     /** Hidden */
-    //private String hidden = null;
+    private String hidden = null;
 
     // ------------------------------------------------------------ Constructors
 
@@ -63,7 +63,7 @@ public class SampleActionForm extends ActionForm {
     public void reset(ActionMapping mapping, HttpServletRequest request) {
 
         this.userName = null;
-        //this.hidden = null;
+        this.hidden = null;
     }
 
     /**
@@ -99,9 +99,9 @@ public class SampleActionForm extends ActionForm {
      * Returns the hidden.
      * @return String
      */
-   /* public String getHidden() {
+   public String getHidden() {
         return hidden;
-    }*/
+    }
 
     /**
      * Returns the name.
@@ -115,9 +115,9 @@ public class SampleActionForm extends ActionForm {
      * Sets the hidden.
      * @param hidden The hidden to set
      */
-    /*public void setHidden(String hidden) {
+    public void setHidden(String hidden) {
         this.hidden = hidden;
-    }*/
+    }
 
     /**
      * Sets the name.

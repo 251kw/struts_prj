@@ -25,6 +25,7 @@
 		<p>
 			* What's your name?<br />
 			<html:text property="userName" size="40" maxlength="50" />
+			<html:hidden property="userName"/>
 		</p>
 		<hr noshade="noshade" />
 		<p>

@@ -22,12 +22,12 @@
 	<html:errors />
 	<html:form action="/confirm">
 		<p>
-			*name <bean:write name="sampleForm" property="userName" scope="request" ignore="true" />
+			*name <bean:parameter id="name" name="userName" /><%=name %>
 		</p>
 		<hr noshade="noshade" />
 		<p>
 			<html:submit>
-				<bean:message key="button.submit" />
+				<bean:message key="button.ok" />
 			</html:submit>
 		</p>
 	</html:form>

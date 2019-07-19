@@ -97,7 +97,7 @@
             scope="request"
             cancellable="true"
             validate="true">
-            <forward name="success" path="/jsp/SampleConfirm"/>
+            <forward name="success" path="/jsp/SampleConfirm.jsp"/>
         </action>
 
         <action
@@ -147,7 +147,7 @@
 
 <!-- ======================================== Message Resources Definitions -->
 
-    <message-resources parameter="MessageResources" />
+    <message-resources parameter="MessageResources_ja" />
 
 
 <!-- =============================================== Plug Ins Configuration -->
