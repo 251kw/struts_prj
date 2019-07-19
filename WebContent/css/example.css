@@ -30,9 +30,10 @@ hr { color: #999999; height: 1px; }
 
 img { border: none; }
 th { text-align: left; }
+p { text-align: center; }
 
 .error { color: #FF0000; }
 .icon { float: right; margin: 5px; }
-.intro { font-size: 14px;  line-height: 1.6; font-weight: bold;} 
+.intro { font-size: 14px;  line-height: 1.6; font-weight: bold;}
 .label {	font-weight: bold; width: 260px; }
 .result { width: 100%; background: #eef; }

@@ -24,29 +24,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sample form using ActionForm</title>
 <html:base />
-<link rel="stylesheet" type="text/css" href="../../css/example.css" />
+<link rel="stylesheet" type="text/css" href="./css/example.css" />
+<link rel="stylesheet" href="./css/skyblue.css" />
+<link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
+<link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
-	<p>
-		Enter information into the fields below.
-	</p>
-	<p>* = required field</p>
-	<hr noshade="noshade" />
-	<html:errors />
-	<html:form action="/welcome">
-		<p>
-			* What's your first name?:<br />
-			<html:text property="name" size="40" maxlength="50" />
-		</p>
-		<html:hidden property="hidden"
-			value="Sssh! It's a secret. Nobody knows I'm here." />
+	<div class="text-center">
+		<br /> <br />
 		<hr noshade="noshade" />
 		<p>
-			<html:submit>
-				<bean:message key="button.submit" />
-			</html:submit>
-			<html:cancel />
+			<html:link href="/struts_prj/jsp/SampleInput.jsp">
+				<th>Welcome.</th>
+			</html:link>
 		</p>
-	</html:form>
+		<hr noshade="noshade" />
+	</div>
 </body>
 </html:html>

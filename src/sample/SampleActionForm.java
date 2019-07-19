@@ -38,10 +38,10 @@ public class SampleActionForm extends ActionForm {
     // ------------------------------------------------------ Instance Variables
 
     /** Name */
-    private String name = null;
+    private String userName = null;
 
     /** Hidden */
-    private String hidden = null;
+    //private String hidden = null;
 
     // ------------------------------------------------------------ Constructors
 
@@ -62,8 +62,8 @@ public class SampleActionForm extends ActionForm {
      */
     public void reset(ActionMapping mapping, HttpServletRequest request) {
 
-        this.name = null;
-        this.hidden = null;
+        this.userName = null;
+        //this.hidden = null;
     }
 
     /**
@@ -85,7 +85,7 @@ public class SampleActionForm extends ActionForm {
         ActionErrors errors = new ActionErrors();
 
         // Name must be entered
-        if ((name == null) || (name.length() < 1)) {
+        if ((userName == null) || (userName.length() < 1)) {
             errors.add("name", new ActionMessage("errors.name.required"));
         }
 
@@ -99,32 +99,32 @@ public class SampleActionForm extends ActionForm {
      * Returns the hidden.
      * @return String
      */
-    public String getHidden() {
+   /* public String getHidden() {
         return hidden;
-    }
+    }*/
 
     /**
      * Returns the name.
      * @return String
      */
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * Sets the hidden.
      * @param hidden The hidden to set
      */
-    public void setHidden(String hidden) {
+    /*public void setHidden(String hidden) {
         this.hidden = hidden;
-    }
+    }*/
 
     /**
      * Sets the name.
      * @param name The name to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
 }

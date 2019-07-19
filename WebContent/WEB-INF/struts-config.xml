@@ -45,7 +45,7 @@
             name="inputForm"
             type="app.InputForm"/>
     end sample -->
-        <form-bean name="sampleForm" type="sample.SampleActionForm"/>
+        <form-bean name="SampleActionForm" type="sample.SampleActionForm"/>
 
     <!-- sample form bean descriptor for a DynaActionForm
         <form-bean
@@ -79,9 +79,9 @@
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
-        <forward
+        <!-- <forward
             name="welcome"
-            path="/Welcome.do"/>
+            path="/Welcome.do"/> -->
     </global-forwards>
 
 
@@ -91,13 +91,30 @@
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
         <action
-            path="/welcome"
-            type="sample.SampleAction"
-            name="sampleForm"
+            path="/input"
+            type="sample.SampleInputAction"
+            name="SampleActionForm"
             scope="request"
             cancellable="true"
             validate="true">
-            <forward name="success" path="/pages/Welcome.jsp"/>
+            <forward name="success" path="/jsp/SampleConfirm"/>
+        </action>
+
+        <action
+            path="/confirm"
+            type="sample.SampleConfirmAction"
+            name="SampleActionForm"
+            scope="request"
+            cancellable="true">
+            <forward name="success" path="/jsp/SampleResult"/>
+        </action>
+
+        <action
+            path="/result"
+            type="sample.SampleResultAction"
+            scope="request"
+            cancellable="true">
+            <forward name="success" path="/WebContent/index"/>
         </action>
 
     <!-- sample input and input submit actions
