@@ -25,17 +25,15 @@ import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.struts.action.ActionErrors;
-import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionMessage;
+import org.apache.struts.validator.ValidatorForm;
 
 /**
  * A simple ActionForm
  *
  * @version $Rev: 471754 $ $Date: 2006-11-06 08:55:09 -0600 (Mon, 06 Nov 2006) $
  */
-public class SampleActionForm extends ActionForm {
+public class SampleActionForm extends ValidatorForm {
 
 	// ------------------------------------------------------ Instance Variables
 
@@ -88,7 +86,7 @@ public class SampleActionForm extends ActionForm {
 	 *
 	 * @return ActionMessages if any validation errors occurred
 	 */
-	public ActionErrors validate(
+	/*public ActionErrors validate(
 			ActionMapping mapping,
 			HttpServletRequest request) {
 
@@ -101,7 +99,7 @@ public class SampleActionForm extends ActionForm {
 
 		return (errors);
 
-	}
+	}*/
 
 	// -------------------------------------------------------------- Properties
 

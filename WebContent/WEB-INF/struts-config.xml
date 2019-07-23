@@ -108,6 +108,7 @@
             scope="request"
             cancellable="true">
             <forward name="success" path="/jsp/SampleResult.jsp"/>
+            <forward name="error" path="/jsp/SampleResult.jsp" />
         </action>
 
         <action
@@ -115,7 +116,7 @@
             type="sample.SampleResultAction"
             scope="request"
             cancellable="true">
-            <forward name="success" path="/WebContent/index"/>
+            <forward name="success" path="index"/>
         </action>
 
     <!-- sample input and input submit actions

@@ -17,7 +17,7 @@
 </head>
 <body>
 
-	<p>Registration completed.</p>
+	<p><html:errors /></p>
 	<hr noshade="noshade" />
 	<html:form action="/result">
 		<p>

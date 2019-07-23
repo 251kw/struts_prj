@@ -32,7 +32,7 @@ public class SampleConfirmAction extends Action {
 
 		// 初期値を設定する
 		String status = null;
-		ActionMessages errors = new ActionMessages();
+		ActionMessages msg = new ActionMessages();
 
 		//ユーザ情報を登録する
 		SampleDBAccess dba = new SampleDBAccess();
@@ -41,18 +41,23 @@ public class SampleConfirmAction extends Action {
 		if (!dba.InsertUser(name)) {
 
 			//エラーメッセージを登録
-			errors.add(ActionMessages.GLOBAL_MESSAGE,
+			msg.add(ActionMessages.GLOBAL_MESSAGE,
 					new ActionMessage("errors.register"));
 		}
 
 		//登録に成功したら
-		if (errors.isEmpty()) {
+		if (msg.isEmpty()) {
 			status = "success";
+
+			//メッセージを登録、登録完了のメッセージを表示する
+			msg.add(ActionMessages.GLOBAL_MESSAGE,
+					new ActionMessage("success.register"));
+			saveErrors(request, msg);
 
 			// 登録に失敗した場合、登録画面にエラーメッセージを表示する
 		} else {
 			status = "error";
-			saveErrors(request, errors);
+			saveErrors(request, msg);
 		}
 
 		return (mapping.findForward(status));
