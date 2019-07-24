@@ -15,7 +15,7 @@ import org.apache.struts.action.ActionMapping;
  * @author r.kawahara
  *
  */
-public class SampleInputAction extends Action {
+public class SampleInputAction2 extends Action {
 
 	/* (非 Javadoc)
 	 * @see org.apache.struts.action.Action#execute(org.apache.struts.action.ActionMapping, org.apache.struts.action.ActionForm, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
