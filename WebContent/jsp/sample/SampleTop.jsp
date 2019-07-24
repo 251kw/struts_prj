@@ -17,13 +17,17 @@
 </head>
 <body>
 
-	<p>
-		<html:errors />
-	</p>
+	<p>Select Menu</p>
 	<hr noshade="noshade" />
+
 	<p>
-		<html:link href="/struts_prj/jsp/sample/SampleTop.jsp">
-			<th>TOP</th>
+		<html:link href="/struts_prj/jsp/sample/SampleInput.jsp">
+			<th>Register user.</th>
+		</html:link>
+	</p>
+	<p>
+		<html:link href="/struts_prj/jsp/sample/SampleSearch.jsp">
+			<th>Search user.</th>
 		</html:link>
 	</p>
 

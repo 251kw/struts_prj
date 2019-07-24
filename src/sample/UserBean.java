@@ -2,7 +2,7 @@ package sample;
 
 // ユーザ情報を保持するクラス
 public class UserBean {
-	private String userId;
+	private int userId;
 	private String loginId;
 	private String password;
 	private String userName;	// ユーザ名
@@ -15,12 +15,12 @@ public class UserBean {
 	}
 
 
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
@@ -75,7 +75,7 @@ public class UserBean {
 	}
 
 
-	public UserBean(String userId, String loginId, String password, String userName, String icon, String profile) {
+	public UserBean(int userId, String loginId, String password, String userName, String icon, String profile) {
 		super();
 		this.userId = userId;
 		this.loginId = loginId;

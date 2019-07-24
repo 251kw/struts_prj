@@ -17,15 +17,28 @@
 </head>
 <body>
 
-	<p>
-		<html:errors />
-	</p>
+	<p>Search user</p>
 	<hr noshade="noshade" />
+
+	<html:form action="/search">
+		<p>
+			* Input user name.<br />
+			<html:text property="userName" size="40" maxlength="50" />
+		</p>
+	</html:form>
+
+	<hr />
+
 	<p>
-		<html:link href="/struts_prj/jsp/sample/SampleTop.jsp">
-			<th>TOP</th>
-		</html:link>
+		<html:submit>
+			<bean:message key="button.search" />
+		</html:submit>
 	</p>
+
+	<hr />
+
+	<bean:include id="resultpage" page="/jsp/sample/SampleSearchResult.jsp" />
+	<%=resultpage %>
 
 </body>
 </html:html>

@@ -32,13 +32,13 @@
 <body>
 	<div class="text-center">
 		<br /> <br />
-		<hr noshade="noshade" />
+		<hr />
 		<p>
-			<html:link href="/struts_prj/jsp/SampleInput.jsp">
+			<html:link href="/struts_prj/jsp/sample/SampleTop.jsp">
 				<th>Welcome.</th>
 			</html:link>
 		</p>
-		<hr noshade="noshade" />
+		<hr />
 	</div>
 </body>
 </html:html>

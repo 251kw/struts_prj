@@ -95,9 +95,9 @@
             type="sample.SampleInputAction"
             name="SampleActionForm"
             cancellable="true"
-            input="/jsp/SampleInput.jsp"
+            input="/jsp/sample/SampleInput.jsp"
             validate="true">
-            <forward name="success" path="/jsp/SampleConfirm.jsp"/>
+            <forward name="success" path="/jsp/sample/SampleConfirm.jsp"/>
         </action>
 
         <action
@@ -105,8 +105,8 @@
             type="sample.SampleConfirmAction"
             name="SampleActionForm"
             validate="false">
-            <forward name="success" path="/jsp/SampleResult.jsp"/>
-            <forward name="error" path="/jsp/SampleResult.jsp" />
+            <forward name="success" path="/jsp/sample/SampleResult.jsp"/>
+            <forward name="error" path="/jsp/sample/SampleResult.jsp" />
         </action>
 
         <action
