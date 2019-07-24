@@ -17,17 +17,20 @@
 </head>
 <body>
 
-	<p>The registration will be processed with the informations below.</p>
+	<p>Fill the form below.</p>
+	* is required field.
 	<hr noshade="noshade" />
-	<html:errors />
-	<html:form action="/confirm">
+
+	<html:errors header="false" footer="false" property="userName"  />
+	<html:form action="/input">
 		<p>
-			*name <bean:parameter id="name" name="userName" /><%=name %>
+			* What's your name?<br />
+			<html:text property="userName" size="40" maxlength="50" />
 		</p>
 		<hr noshade="noshade" />
 		<p>
 			<html:submit>
-				<bean:message key="button.ok" />
+				<bean:message key="button.submit" />
 			</html:submit>
 		</p>
 	</html:form>

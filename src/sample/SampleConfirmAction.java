@@ -26,7 +26,7 @@ public class SampleConfirmAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		// 画面より名前を取得する
+		// 画面よりログインIDとパスワードを取得する
 		SampleActionForm sampleForm = (SampleActionForm) form;
 		String name = sampleForm.getUserName();
 

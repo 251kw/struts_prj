@@ -94,7 +94,6 @@
             path="/input"
             type="sample.SampleInputAction"
             name="SampleActionForm"
-            scope="request"
             cancellable="true"
             input="/jsp/SampleInput.jsp"
             validate="true">
@@ -105,8 +104,7 @@
             path="/confirm"
             type="sample.SampleConfirmAction"
             name="SampleActionForm"
-            scope="request"
-            cancellable="true">
+            validate="false">
             <forward name="success" path="/jsp/SampleResult.jsp"/>
             <forward name="error" path="/jsp/SampleResult.jsp" />
         </action>
@@ -114,8 +112,7 @@
         <action
             path="/result"
             type="sample.SampleResultAction"
-            scope="request"
-            cancellable="true">
+            validate="false">
             <forward name="success" path="index"/>
         </action>
 

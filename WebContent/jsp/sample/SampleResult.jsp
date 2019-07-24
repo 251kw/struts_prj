@@ -17,15 +17,15 @@
 </head>
 <body>
 
-	<p><html:errors /></p>
+	<p>
+		<html:errors />
+	</p>
 	<hr noshade="noshade" />
-	<html:form action="/result">
-		<p>
-			<html:submit>
-				<bean:message key="button.top" />
-			</html:submit>
-		</p>
-	</html:form>
+	<p>
+		<html:link href="/struts_prj/jsp/SampleInput.jsp">
+			<th>TOP</th>
+		</html:link>
+	</p>
 
 </body>
 </html:html>

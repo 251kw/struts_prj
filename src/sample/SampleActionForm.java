@@ -40,9 +40,6 @@ public class SampleActionForm extends ValidatorForm {
 	/** Name */
 	private String userName = null;
 
-	/** Hidden */
-	private String hidden = null;
-
 	// ------------------------------------------------------------ Constructors
 
 	/**
@@ -63,7 +60,6 @@ public class SampleActionForm extends ValidatorForm {
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 
 		this.userName = null;
-		this.hidden = null;
 
 		//文字化け対策
 		try {
@@ -107,9 +103,6 @@ public class SampleActionForm extends ValidatorForm {
 	 * Returns the hidden.
 	 * @return String
 	 */
-	public String getHidden() {
-		return hidden;
-	}
 
 	/**
 	 * Returns the name.
@@ -123,9 +116,6 @@ public class SampleActionForm extends ValidatorForm {
 	 * Sets the hidden.
 	 * @param hidden The hidden to set
 	 */
-	public void setHidden(String hidden) {
-		this.hidden = hidden;
-	}
 
 	/**
 	 * Sets the name.
