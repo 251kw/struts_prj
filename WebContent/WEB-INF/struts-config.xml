@@ -46,6 +46,7 @@
             type="app.InputForm"/>
     end sample -->
         <form-bean name="SampleActionForm" type="sample.SampleActionForm"/>
+        <form-bean name="SampleActionForm2" type="sample2.SampleActionForm2"/>
 
     <!-- sample form bean descriptor for a DynaActionForm
         <form-bean
@@ -100,6 +101,16 @@
             <forward name="success" path="/jsp/SampleConfirm.jsp"/>
         </action>
 
+     	<action
+     		path="/input2"
+     		type="sample2.SampleInputAction2"
+     		name="SampleActionForm2"
+     		cancellable="true"
+     		input="/jsp/sample2/SampleInput2.jsp"
+     		validate="true">
+     		<forward name="success" path="/jsp/sample2/SampleConfirm2.jsp"/>
+     	</action>
+
         <action
             path="/confirm"
             type="sample.SampleConfirmAction"
@@ -107,6 +118,13 @@
             validate="false">
             <forward name="success" path="/jsp/SampleResult.jsp"/>
             <forward name="error" path="/jsp/SampleResult.jsp" />
+        </action>
+
+        <action
+        	path="/confirm2"
+        	type="sample2.SampleConfirmAction2"
+        	name="SampleActionForm2">
+        	<forward name="success" path="/jsp/sample2/SampleResult2.jsp"/>
         </action>
 
         <action

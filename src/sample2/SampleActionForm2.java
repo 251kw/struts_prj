@@ -33,7 +33,7 @@ import org.apache.struts.validator.ValidatorForm;
  *
  * @version $Rev: 471754 $ $Date: 2006-11-06 08:55:09 -0600 (Mon, 06 Nov 2006) $
  */
-public class SampleActionForm extends ValidatorForm {
+public class SampleActionForm2 extends ValidatorForm {
 
 	// ------------------------------------------------------ Instance Variables
 
@@ -45,7 +45,7 @@ public class SampleActionForm extends ValidatorForm {
 	/**
 	 * Constructor for MultiboxActionForm.
 	 */
-	public SampleActionForm() {
+	public SampleActionForm2() {
 		super();
 	}
 
