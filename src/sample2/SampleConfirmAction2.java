@@ -24,6 +24,12 @@ public class SampleConfirmAction2 extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
+		String username = request.getParameter("userName");
+		SampleDBAccess2 dba = new SampleDBAccess2();
+		boolean result = dba.InsertUserName(username);
+
+		SampleDBAccess2 dba1 = new SampleDBAccess2();
+
 		return (mapping.findForward("success"));
 	}
 }
