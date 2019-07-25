@@ -133,6 +133,13 @@
         </action>
 
         <action
+        	path="/confirm2"
+        	type="sample2.SampleConfirmAction2"
+        	name="SampleActionForm2">
+        	<forward name="success" path="/jsp/sample2/SampleResult2.jsp"/>
+        </action>
+
+        <action
             path="/result"
             type="sample.SampleResultAction"
             scope="request"
