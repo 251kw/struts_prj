@@ -18,15 +18,19 @@
 <body>
 
 	<p>The registration will be processed with the informations below.</p>
-	<hr noshade="noshade" />
+	<hr />
 	<html:errors />
 	<html:form action="/confirm">
 		<p>
-			*name <bean:parameter id="name" name="userName" /><%=name %>
-			<html:hidden property="userName" value="<%=name %>"/>
+			*name
+			<bean:parameter id="name" name="userName" /><%=name%>
+			<html:hidden property="userName" value="<%=name%>" />
 		</p>
-		<hr noshade="noshade" />
+		<hr />
 		<p>
+			<html:cancel>
+				<bean:message key="button.cancel" />
+			</html:cancel>
 			<html:submit>
 				<bean:message key="button.ok" />
 			</html:submit>

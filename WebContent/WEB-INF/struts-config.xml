@@ -96,8 +96,10 @@
             type="sample.SampleInputAction"
             name="SampleActionForm"
             cancellable="true"
+            scope="request"
             input="/jsp/sample/SampleInput.jsp"
             validate="true">
+            <forward name="cancel" path="/jsp/sample/SampleTop.jsp"/>
             <forward name="success" path="/jsp/sample/SampleConfirm.jsp"/>
         </action>
 
@@ -115,7 +117,10 @@
             path="/confirm"
             type="sample.SampleConfirmAction"
             name="SampleActionForm"
+            scope="request"
+            cancellable="true"
             validate="false">
+            <forward name="cancel" path="/jsp/sample/SampleInput.jap" />
             <forward name="success" path="/jsp/sample/SampleResult.jsp"/>
             <forward name="error" path="/jsp/sample/SampleResult.jsp" />
         </action>
@@ -130,8 +135,22 @@
         <action
             path="/result"
             type="sample.SampleResultAction"
+            scope="request"
             validate="false">
             <forward name="success" path="index"/>
+        </action>
+
+        <action
+            path="/search"
+            type="sample.SampleSearchAction"
+            name="SampleActionForm"
+            scope="request"
+            cancellable="true"
+            input="/jsp/sample/SampleSearch.jsp"
+            validate="true">
+            <forward name="cancel" path="/jsp/sample/SampleTop.jsp"/>
+            <forward name="success" path="/jsp/sample/SampleSearch.jsp"/>
+            <forward name="null" path="/jsp/sample/SampleSearch.jsp" />
         </action>
 
     <!-- sample input and input submit actions

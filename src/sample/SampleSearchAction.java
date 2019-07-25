@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -29,34 +28,41 @@ public class SampleSearchAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		// 画面よりログインIDとパスワードを取得する
-		SampleActionForm sampleForm = (SampleActionForm) form;
-		String name = sampleForm.getUserName();
-
-		// 初期値を設定する
 		String status = null;
-		ActionMessages msg = new ActionMessages();
 
-		//ユーザを検索する
-		SampleDBAccess dba = new SampleDBAccess();
-		ArrayList<UserBean> list = dba.SearchUserByName(name);
+		// キャンセルボタン押下時の処理
+		if (this.isCancelled(request)) {
+			status = "cancel";
+		}
+		// 検索の処理
+		else {
+			// 画面よりログインIDとパスワードを取得する
+			SampleActionForm sampleForm = (SampleActionForm) form;
+			String name = sampleForm.getUserName();
 
-		//検索結果がなければ
-		if (list.size() == 0) {
-			status = "error";
+			// 初期値を設定する
+			ActionMessages msg = new ActionMessages();
 
-			//メッセージを登録
-			msg.add(ActionMessages.GLOBAL_MESSAGE,
-					new ActionMessage("errors.search"));
-			saveErrors(request, msg);
+			// DBからユーザを検索する
+			SampleDBAccess dba = new SampleDBAccess();
+			ArrayList<UserBean> list = dba.SearchUserByName(name);
 
-			//検索結果があれば
-		}else {
-			status = "success";
+			// 検索結果がなければ
+			if (list.size() == 0) {
+				status = "null";
 
-			//検索結果をセッションに保存
-			HttpSession session = request.getSession();
-			session.setAttribute("userlist", list);
+				// メッセージを登録
+				msg.add(ActionMessages.GLOBAL_MESSAGE,
+						new ActionMessage("null.search"));
+				saveMessages(request, msg);
+			}
+			// 検索結果があれば
+			else {
+				status = "success";
+
+				// 検索結果をリクエストに保存
+				request.setAttribute("userlist", list);
+			}
 		}
 		return (mapping.findForward(status));
 	}

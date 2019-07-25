@@ -24,6 +24,16 @@ public class SampleInputAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		return (mapping.findForward("success"));
+		String status = null;
+
+		// キャンセルボタン押下時の処理
+		if ( this.isCancelled(request) ) {
+			status = "cancel";
+	    }
+		// submitボタン押下時の処理
+		else {
+	    	status = "success";
+	    }
+		return (mapping.findForward(status));
 	}
 }

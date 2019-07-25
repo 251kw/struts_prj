@@ -52,8 +52,8 @@ public class SampleDBAccess extends DBAccess {
 		try {
 
 			con = getConnection(); // データベース接続情報
-			ps = con.prepareStatement("select * from users where userName=?"); // SQL用意
-			ps.setString(1, userName);
+			ps = con.prepareStatement("select * from users where userName like ?"); // SQL用意
+			ps.setString(1, "%" + userName + "%");
 
 			ResultSet rst = ps.executeQuery(); //SQLの実行
 

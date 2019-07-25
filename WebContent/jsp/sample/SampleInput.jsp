@@ -19,18 +19,25 @@
 
 	<p>Fill the form below.</p>
 	* is required field.
-	<hr noshade="noshade" />
+	<hr />
 
-	<html:errors header="false" footer="false" property="userName"  />
+	<html:errors header="false" footer="false" property="userName" />
 	<html:form action="/input">
 		<p>
 			* What's your name?<br />
+			<logic:notEmpty property="userName">
+			<bean:parameter id="name" name="userName" />
+			<html:text property="userName" size="40" maxlength="50" value="<%=name %>" />
+			</logic:notEmpty>
 			<html:text property="userName" size="40" maxlength="50" />
 		</p>
-		<hr noshade="noshade" />
+		<hr />
 		<p>
+			<html:cancel>
+				<bean:message key="button.cancel" />
+			</html:cancel>
 			<html:submit>
-				<bean:message key="button.submit" />
+				<bean:message key="button.confirm" />
 			</html:submit>
 		</p>
 	</html:form>

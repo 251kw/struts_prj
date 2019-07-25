@@ -18,27 +18,48 @@
 <body>
 
 	<p>Search user</p>
-	<hr noshade="noshade" />
+	<hr />
 
 	<html:form action="/search">
 		<p>
-			* Input user name.<br />
+			Input user name.<br />
 			<html:text property="userName" size="40" maxlength="50" />
 		</p>
+		<p>
+			<html:cancel>
+				<bean:message key="button.cancel" />
+			</html:cancel>
+			<html:submit>
+				<bean:message key="button.search" />
+			</html:submit>
+		</p>
 	</html:form>
-
 	<hr />
 
-	<p>
-		<html:submit>
-			<bean:message key="button.search" />
-		</html:submit>
-	</p>
+	<html:messages id="msg" message="true">
+		<bean:write name="msg" ignore="true" />
+	</html:messages>
 
-	<hr />
-
-	<bean:include id="resultpage" page="/jsp/sample/SampleSearchResult.jsp" />
-	<%=resultpage %>
+	<logic:present name="userlist" scope="request">
+		<table border="1">
+			<tr>
+				<th>UserID</th>
+				<th>LoginID</th>
+				<th>Name</th>
+				<th>icon</th>
+				<th>Profile</th>
+			</tr>
+			<logic:iterate id="user" name="userlist" scope="request">
+				<tr>
+					<td><bean:write name="user" property="userId" /></td>
+					<td><bean:write name="user" property="loginId" /></td>
+					<td><bean:write name="user" property="userName" /></td>
+					<td><bean:write name="user" property="icon" /></td>
+					<td><bean:write name="user" property="profile" /></td>
+				</tr>
+			</logic:iterate>
+		</table>
+	</logic:present>
 
 </body>
 </html:html>
