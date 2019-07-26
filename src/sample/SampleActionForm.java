@@ -39,6 +39,10 @@ public class SampleActionForm extends ValidatorForm {
 
 	/** Name */
 	private String userName = null;
+	private String loginId = null;
+	private String password = null;
+	private String icon = null;
+	private String profile = null;
 
 	// ------------------------------------------------------------ Constructors
 
@@ -60,6 +64,10 @@ public class SampleActionForm extends ValidatorForm {
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 
 		this.userName = null;
+		this.loginId = null;
+		this.password = null;
+		this.icon = null;
+		this.profile = null;
 
 		//文字化け対策
 		try {
@@ -112,6 +120,21 @@ public class SampleActionForm extends ValidatorForm {
 		return userName;
 	}
 
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
 	/**
 	 * Sets the hidden.
 	 * @param hidden The hidden to set
@@ -123,6 +146,22 @@ public class SampleActionForm extends ValidatorForm {
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 }

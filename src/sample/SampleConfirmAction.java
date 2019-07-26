@@ -28,16 +28,15 @@ public class SampleConfirmAction extends Action {
 
 		String status = null;
 
-		// 画面より名前を取得する
-		SampleActionForm sampleForm = (SampleActionForm) form;
-		String name = sampleForm.getUserName();
-
 		// キャンセルボタン押下時の処理
 		if (this.isCancelled(request)) {
 			status = "cancel";
 		}
 		// 登録処理
 		else {
+			// 画面より名前を取得する
+			SampleActionForm sampleForm = (SampleActionForm) form;
+			String name = sampleForm.getUserName();
 
 			// 初期値を設定する
 			ActionMessages msg = new ActionMessages();

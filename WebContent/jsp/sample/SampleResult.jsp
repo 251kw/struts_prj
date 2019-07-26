@@ -17,10 +17,13 @@
 </head>
 <body>
 
+	<html:messages id="msg" message="true">
+		<bean:write name="msg" ignore="true" />
+	</html:messages>
 	<p>
 		<html:errors />
 	</p>
-	<hr noshade="noshade" />
+	<hr />
 	<p>
 		<html:link href="/struts_prj/jsp/sample/SampleTop.jsp">
 			<th>TOP</th>
