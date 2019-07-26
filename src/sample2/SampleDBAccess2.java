@@ -42,5 +42,4 @@ public class SampleDBAccess2 extends DBAccess {
 		return result;
 	}
 
-
 }

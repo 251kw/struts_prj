@@ -15,7 +15,8 @@
 </head>
 <body>
 	<div class="text-center">
-		<html:link href="/struts_prj/WebContent/src/index2.jsp">
+	<html:hidden name="SampleActionForm2" property="userName" write="true" />
+		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">
 			<h1>次へ</h1>
 		</html:link>
 	</div>

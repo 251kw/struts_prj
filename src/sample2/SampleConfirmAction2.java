@@ -28,7 +28,6 @@ public class SampleConfirmAction2 extends Action {
 		SampleDBAccess2 dba = new SampleDBAccess2();
 		boolean result = dba.InsertUserName(username);
 
-		SampleDBAccess2 dba1 = new SampleDBAccess2();
 
 		return (mapping.findForward("success"));
 	}

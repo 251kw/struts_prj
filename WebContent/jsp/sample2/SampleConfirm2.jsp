@@ -11,9 +11,14 @@
 </head>
 <body>
 	<html:form action="/confirm2">
-		<html:hidden name="SampleActionForm2" property="userName" write="true" />
+		<bean:write name="SampleActionForm2" property="userName" />
+		<html:hidden name="SampleActionForm2" property="userName" />
+		<br>
 		<html:submit>
 			<bean:message key="button.ok" />
+		</html:submit>
+		<html:submit>
+			<bean:message key="button.cancel" />
 		</html:submit>
 	</html:form>
 </body>
