@@ -19,12 +19,31 @@
 
 	<p>The registration will be processed with the informations below.</p>
 	<hr />
-	<html:errors />
 	<html:form action="/confirm">
 		<p>
-			*name
+			Name :
 			<bean:parameter id="name" name="userName" /><%=name%>
 			<html:hidden property="userName" value="<%=name%>" />
+		</p>
+		<p>
+			Login ID :
+			<bean:parameter id="ID" name="loginId" /><%=ID%>
+			<html:hidden property="loginId" value="<%=ID%>" />
+		</p>
+		<p>
+			Password :
+			<bean:parameter id="pass" name="password" /><%=pass%>
+			<html:hidden property="password" value="<%=pass%>" />
+		</p>
+		<p>
+			Icon :
+			<bean:parameter id="icon" name="icon" /><%=icon%>
+			<html:hidden property="icon" value="<%=icon%>" />
+		</p>
+		<p>
+			Profile :
+			<bean:parameter id="profile" name="profile" /><%=profile%>
+			<html:hidden property="profile" value="<%=profile%>" />
 		</p>
 		<hr />
 		<p>

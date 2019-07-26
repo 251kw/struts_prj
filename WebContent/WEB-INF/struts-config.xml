@@ -120,7 +120,7 @@
             scope="request"
             cancellable="true"
             validate="false">
-            <forward name="cancel" path="/jsp/sample/SampleInput.jap" />
+            <forward name="cancel" path="/jsp/sample/SampleInput.jsp" />
             <forward name="success" path="/jsp/sample/SampleResult.jsp"/>
             <forward name="error" path="/jsp/sample/SampleResult.jsp" />
         </action>

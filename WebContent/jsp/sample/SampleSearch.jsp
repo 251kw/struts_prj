@@ -54,7 +54,7 @@
 					<td><bean:write name="user" property="userId" /></td>
 					<td><bean:write name="user" property="loginId" /></td>
 					<td><bean:write name="user" property="userName" /></td>
-					<td><bean:write name="user" property="icon" /></td>
+					<td><span><bean:write name="user" property="icon" /> pe-3x pe-va</span></td>
 					<td><bean:write name="user" property="profile" /></td>
 				</tr>
 			</logic:iterate>
