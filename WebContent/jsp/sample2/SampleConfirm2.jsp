@@ -7,17 +7,17 @@
 <html:html xhtml="true" lang="true">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>確認画面</title>
 </head>
 <body>
 	<html:form action="/confirm2">
 		<bean:write name="SampleActionForm2" property="userName" />
 		<html:hidden name="SampleActionForm2" property="userName" />
 		<br>
-		<html:submit>
+		<html:submit property="btn">
 			<bean:message key="button.ok" />
 		</html:submit>
-		<html:submit>
+		<html:submit property="btn">
 			<bean:message key="button.cancel" />
 		</html:submit>
 	</html:form>

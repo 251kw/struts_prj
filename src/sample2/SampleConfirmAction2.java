@@ -17,6 +17,9 @@ import org.apache.struts.action.ActionMapping;
  */
 public class SampleConfirmAction2 extends Action {
 
+//	private final String SUCCESS = "success";
+//	private final String CANCEL = "cancel";
+//	private final String OK = "OK";
 	/* (非 Javadoc)
 	 * @see org.apache.struts.action.Action#execute(org.apache.struts.action.ActionMapping, org.apache.struts.action.ActionForm, javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -28,7 +31,16 @@ public class SampleConfirmAction2 extends Action {
 		SampleDBAccess2 dba = new SampleDBAccess2();
 		boolean result = dba.InsertUserName(username);
 
+		String btn = request.getParameter("btn");
+		if(btn.equals(Teisu.OK)) {
 
-		return (mapping.findForward("success"));
+			return (mapping.findForward(Teisu.SUCCESS));
+			
+		}else {
+			
+			request.setAttribute("userName", username);
+			return (mapping.findForward(Teisu.CANCEL));
+		}
+
 	}
 }

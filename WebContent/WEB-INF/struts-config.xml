@@ -109,6 +109,7 @@
      		type="sample2.SampleInputAction2"
      		name="SampleActionForm2"
      		cancellable="true"
+     		scope="request"
      		input="/jsp/sample2/SampleInput2.jsp"
      		validate="true">
      		<forward name="success" path="/jsp/sample2/SampleConfirm2.jsp"/>
@@ -131,6 +132,7 @@
         	type="sample2.SampleConfirmAction2"
         	name="SampleActionForm2">
         	<forward name="success" path="/jsp/sample2/SampleResult2.jsp"/>
+        	<forward name="cancel" path="/jsp/sample2/SampleInput2.jsp" />
         </action>
 
         <action
