@@ -24,9 +24,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sample form using ActionForm</title>
 <html:base />
-<link rel="stylesheet" href="./css/skyblue.css" />
-<link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
-<link rel="stylesheet" href="./css/helper.css" />
+<link rel="stylesheet" type="text/css" href="./css/skyblue.css" />
+<link rel="stylesheet" type="text/css" href="./css/pe-icon-7-stroke.css" />
+<link rel="stylesheet" type="text/css" href="./css/helper.css" />
 </head>
 <body>
 	<div class="text-center">

@@ -10,10 +10,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sample form using ActionForm</title>
 <html:base />
-<link rel="stylesheet" type="text/css" href="./css/example.css" />
-<link rel="stylesheet" href="./css/skyblue.css" />
-<link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
-<link rel="stylesheet" href="./css/helper.css" />
+<link rel="stylesheet" type="text/css" href="./css/skyblue.css" />
+<link rel="stylesheet" type="text/css" href="./css/pe-icon-7-stroke.css" />
+<link rel="stylesheet" type="text/css" href="./css/helper.css" />
 </head>
 <body>
 
@@ -22,8 +21,36 @@
 
 	<html:form action="/search">
 		<p>
-			Input user name.<br />
-			<html:text property="userName" size="40" maxlength="50" />
+			Search by Name.<br />
+			<html:text property="userName" size="40" maxlength="64" />
+		</p>
+		<p>
+			Search by login ID.<br />
+			<html:text property="loginId" size="40" maxlength="32" />
+		</p>
+		<p>
+			Search by icon.<br />
+			<html:select property="icon">
+				<option value="icon-user">male</option>
+				<option value="icon-user-female">female</option>
+				<option value="icon-magic-wand">wand</option>
+				<option value="icon-plugin">plugin</option>
+				<option value="icon-rocket">rocket</option>
+				<option value="icon-smile">smile</option>
+				<option value="icon-wine">wine</option>
+				<option value="icon-cash">cash</option>
+				<option value="icon-gym">gym</option>
+				<option value="icon-diamond">diamond</option>
+				<option value="icon-star">star</option>
+				<option value="icon-science">science</option>
+				<option value="icon-film">film</option>
+				<option value="icon-plane">plane</option>
+				<option value="icon-joy">joy</option>
+			</html:select>
+		</p>
+		<p>
+			Search by Profile.<br />
+			<html:text property="profile" size="40" maxlength="128" />
 		</p>
 		<p>
 			<html:cancel>
@@ -54,7 +81,7 @@
 					<td><bean:write name="user" property="userId" /></td>
 					<td><bean:write name="user" property="loginId" /></td>
 					<td><bean:write name="user" property="userName" /></td>
-					<td><span><bean:write name="user" property="icon" /> pe-3x pe-va</span></td>
+					<td><span><bean:write name="user" property="icon" /></span></td>
 					<td><bean:write name="user" property="profile" /></td>
 				</tr>
 			</logic:iterate>

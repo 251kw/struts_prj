@@ -10,15 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sample form using ActionForm</title>
 <html:base />
-<link rel="stylesheet" type="text/css" href="./css/example.css" />
-<link rel="stylesheet" href="./css/skyblue.css" />
-<link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
-<link rel="stylesheet" href="./css/helper.css" />
+<link rel="stylesheet" type="text/css" href="./css/skyblue.css" />
+<link rel="stylesheet" type="text/css" href="./css/pe-icon-7-stroke.css" />
+<link rel="stylesheet" type="text/css" href="./css/helper.css" />
 </head>
 <body>
 
 	<p>Select Menu</p>
-	<hr noshade="noshade" />
+	<hr />
 
 	<p>
 		<html:link href="/struts_prj/jsp/sample/SampleInput.jsp">

@@ -46,6 +46,7 @@
             type="app.InputForm"/>
     end sample -->
         <form-bean name="SampleActionForm" type="sample.SampleActionForm"/>
+        <form-bean name="SampleSearchActionForm" type="sample.SampleSearchActionForm"/>
         <form-bean name="SampleActionForm2" type="sample2.SampleActionForm2"/>
 
     <!-- sample form bean descriptor for a DynaActionForm
@@ -143,7 +144,7 @@
         <action
             path="/search"
             type="sample.SampleSearchAction"
-            name="SampleActionForm"
+            name="SampleSearchActionForm"
             scope="request"
             cancellable="true"
             input="/jsp/sample/SampleSearch.jsp"
