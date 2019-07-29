@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>完了画面</title>
 <link rel="stylesheet" type="text/css" href="./css/example.css" />
 <link rel="stylesheet" href="./css/skyblue.css" />
 <link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
@@ -15,9 +15,15 @@
 </head>
 <body>
 	<div class="text-center">
-	<html:hidden name="SampleActionForm2" property="userName" write="true" />
+		<table border="1">
+			<tr>
+				<td><html:hidden name="SampleActionForm2" property="userName"
+						write="true" /></td>
+			</tr>
+		</table>
+		<br> <br>
 		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">
-			<h1>次へ</h1>
+			次へ
 		</html:link>
 	</div>
 </body>
