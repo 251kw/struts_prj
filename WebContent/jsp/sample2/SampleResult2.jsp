@@ -17,14 +17,20 @@
 	<div class="text-center">
 		<table border="1">
 			<tr>
+				<td><html:hidden name="SampleActionForm2" property="loginId"
+						write="true" />
+				<td><html:hidden name="SampleActionForm2" property="password"
+						write="true" /></td>
 				<td><html:hidden name="SampleActionForm2" property="userName"
 						write="true" /></td>
+				<td><html:hidden name="SampleActionForm2" property="icon"
+						write="true" /></td>
+				<td><html:hidden name="SampleActionForm2" property="profile"
+						write="true" />
 			</tr>
 		</table>
 		<br> <br>
-		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">
-			次へ
-		</html:link>
+		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">次へ</html:link>
 	</div>
 </body>
 </html>

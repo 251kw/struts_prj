@@ -11,8 +11,17 @@
 </head>
 <body>
 	<html:form action="/confirm2">
+		<bean:write name="SampleActionForm2" property="loginId" />
+		<bean:write name="SampleActionForm2" property="password" />
 		<bean:write name="SampleActionForm2" property="userName" />
+		<bean:write name="SampleActionForm2" property="icon" />
+		<bean:write name="SampleActionForm2" property="profile"/>
+
+		<html:hidden name="SampleActionForm2" property="loginId" />
+		<html:hidden name="SampleActionForm2" property="password"/>
 		<html:hidden name="SampleActionForm2" property="userName" />
+		<html:hidden name="SampleActionForm2" property="icon"/>
+		<html:hidden name="SampleActionForm2" property="profile"/>
 		<br>
 		<html:submit property="btn">
 			<bean:message key="button.ok" />
