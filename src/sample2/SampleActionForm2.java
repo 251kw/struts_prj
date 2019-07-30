@@ -39,6 +39,10 @@ public class SampleActionForm2 extends ValidatorForm {
 
 	/** Name */
 	private String userName = null;
+	private String loginId = null;
+	private String password = null;
+	private String icon = null;
+	private String profile = null;
 
 	// ------------------------------------------------------------ Constructors
 
@@ -82,20 +86,20 @@ public class SampleActionForm2 extends ValidatorForm {
 	 *
 	 * @return ActionMessages if any validation errors occurred
 	 */
-	/*public ActionErrors validate(
-			ActionMapping mapping,
-			HttpServletRequest request) {
-
-		ActionErrors errors = new ActionErrors();
-
-		// Name must be entered
-		if ((userName == null) || (userName.length() < 1)) {
-			errors.add("name", new ActionMessage("errors.name.required"));
-		}
-
-		return (errors);
-
-	}*/
+//	public ActionErrors validate(
+//			ActionMapping mapping,
+//			HttpServletRequest request) {
+//
+//		ActionErrors errors = new ActionErrors();
+//
+//		// Name must be entered
+//		if ((userName == null) || (userName.length() < 1)) {
+//			errors.add("name", new ActionMessage("errors.name.required"));
+//		}
+//
+//		return (errors);
+//
+//	}
 
 	// -------------------------------------------------------------- Properties
 
@@ -112,6 +116,22 @@ public class SampleActionForm2 extends ValidatorForm {
 		return userName;
 	}
 
+	public String getLoginId()	{
+		return loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
 	/**
 	 * Sets the hidden.
 	 * @param hidden The hidden to set
@@ -123,6 +143,22 @@ public class SampleActionForm2 extends ValidatorForm {
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 }

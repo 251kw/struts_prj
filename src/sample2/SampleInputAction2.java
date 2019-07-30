@@ -24,6 +24,18 @@ public class SampleInputAction2 extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		return (mapping.findForward("success"));
+	boolean STATE = true;
+	String btn = request.getParameter("btn");
+
+		//submitボタンが押されたら
+		if(Teisu.SUBMIT.equals(btn)) {
+
+			return (mapping.findForward(Teisu.SUCCESS));
+
+		}else {
+
+			return (mapping.findForward(Teisu.CANCEL));
+		}
+
 	}
 }

@@ -35,9 +35,9 @@ public class SampleConfirmAction2 extends Action {
 		if(btn.equals(Teisu.OK)) {
 
 			return (mapping.findForward(Teisu.SUCCESS));
-			
+
 		}else {
-			
+
 			request.setAttribute("userName", username);
 			return (mapping.findForward(Teisu.CANCEL));
 		}

@@ -7,19 +7,53 @@
 <html:html xhtml="true" lang="true">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>入力画面</title>
 <link rel="stylesheet" type="text/css" href="./css/example.css" />
 <link rel="stylesheet" href="./css/skyblue.css" />
 <link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
+<%
+	String userName = (String) request.getAttribute("userName");
+		if (userName == null) {
+			userName = "";
+		}
+%>
 <body>
 	<html:form action="/input2">
-			ユーザーネームを入力してください。<br>
-		<html:text property="userName" size="16" />
-		<html:submit>
+		<html:errors />
+		<table>
+			<tr>
+				<th>ログインID</th>
+				<td><html:text property="loginId" size="16" /></td>
+			</tr>
+			<tr>
+				<th>パスワード</th>
+				<td><html:password property="password" size="16" /></td>
+			</tr>
+			<tr>
+				<th>ユーザーネーム</th>
+				<td><html:text property="userName" value="<%=userName%>"
+						size="16" /></td>
+			</tr>
+			<tr>
+				<th>アイコン</th>
+				<td><html:select property="icon">
+						<html:option value="pe-7s-user">male</html:option>
+						<html:option value="pe-7s-user-female">female</html:option>
+					</html:select></td>
+			</tr>
+			<tr>
+				<th>プロフィール</th>
+				<td><html:text property="profile" size="16" /></td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<html:submit property="btn">
 			<bean:message key="button.submit" />
 		</html:submit>
+		<html:cancel value="cancel" />
 	</html:form>
 </body>
 </html:html>

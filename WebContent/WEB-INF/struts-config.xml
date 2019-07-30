@@ -113,6 +113,7 @@
      		input="/jsp/sample2/SampleInput2.jsp"
      		validate="true">
      		<forward name="success" path="/jsp/sample2/SampleConfirm2.jsp"/>
+     		<forward name="cancel" path="/jsp/sample2/SampleTop2.jsp"/>
      	</action>
 
         <action
@@ -130,7 +131,8 @@
         <action
         	path="/confirm2"
         	type="sample2.SampleConfirmAction2"
-        	name="SampleActionForm2">
+        	name="SampleActionForm2"
+        	validate="false">
         	<forward name="success" path="/jsp/sample2/SampleResult2.jsp"/>
         	<forward name="cancel" path="/jsp/sample2/SampleInput2.jsp" />
         </action>
