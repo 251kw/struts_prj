@@ -16,29 +16,40 @@ public class SampleDBAccess extends DBAccess {
 	Connection con = null;
 
 	// DBにユーザ情報を登録する
-	public boolean InsertUser(String userName) {
+	public boolean InsertUser(String loginId, String password, String userName, String icon, String profile) {
 
 		boolean result = false;
 
 		try {
 
-			con = getConnection(); // データベース接続情報
-			ps = con.prepareStatement("Insert into users(userName) values(?)"); // SQL用意
-			ps.setString(1, userName);
+			// データベース接続情報
+			con = getConnection();
 
-			int cnt = ps.executeUpdate(); //SQLの実行
+			// SQL用意
+			ps = con.prepareStatement("Insert into users(loginId,password,userName,icon,profile) values(?,?,?,?,?)");
+			ps.setString(1, loginId);
+			ps.setString(2, password);
+			ps.setString(3, userName);
+			ps.setString(4, icon);
+			ps.setString(5, profile);
+
+			//SQLの実行
+			int cnt = ps.executeUpdate();
 
 			// 実行出来たら登録成功
 			if (cnt == 1) {
 				result = true;
-				// 実行できなければ登録失敗
-			} else {
+			}
+
+			// 実行できなければ登録失敗
+			else {
 				result = false;
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+
 			// データベース切断処理
 			close(ps);
 			close(con);
@@ -55,9 +66,11 @@ public class SampleDBAccess extends DBAccess {
 		String sql = "select * from users where ";
 
 		// SQL文にキーを設定する
-		boolean twice = false;
+		boolean second = false;
 		for (String key : items.keySet()) {
-			if (twice) { // 二週目ならばandをつける
+
+			// 二週目ならばandをつける
+			if (second) {
 				sql = sql + " and ";
 			}
 			if ("icon".equals(key)) {
@@ -67,14 +80,16 @@ public class SampleDBAccess extends DBAccess {
 			}
 			sql = sql + key;
 
-			twice = true;
+			second = true;
 		}
 
 		try {
 
-			con = getConnection(); // データベース接続情報
+			// データベース接続情報
+			con = getConnection();
 
-			ps = con.prepareStatement(sql); // SQL用意
+			// SQL用意
+			ps = con.prepareStatement(sql);
 
 			// SQL文に値を設定する
 			int i = 0;
@@ -84,13 +99,13 @@ public class SampleDBAccess extends DBAccess {
 					ps.setString(i, entry.getValue());
 				} else {
 					ps.setString(i, "%" + entry.getValue() + "%");
-
 				}
 			}
 
-			ResultSet rst = ps.executeQuery(); //SQLの実行
+			//SQLの実行
+			ResultSet rst = ps.executeQuery();
 
-			// データがとれたらオブジェクトにセットしリストに追加する
+			// データがとれたらBeanにセットしリストに追加する
 			while (rst.next()) {
 				UserBean user = new UserBean();
 				user.setUserId(rst.getInt(1));
@@ -104,6 +119,7 @@ public class SampleDBAccess extends DBAccess {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+
 			// データベース切断処理
 			close(ps);
 			close(con);
@@ -111,105 +127,36 @@ public class SampleDBAccess extends DBAccess {
 		return userlist;
 	}
 
-	// DBからログインIDでユーザを検索する
-	public ArrayList<UserBean> SearchUserByID(String loginId) {
-
-		ArrayList<UserBean> list = new ArrayList<>();
+	// 重複IDをチェック
+	public boolean CheckId(String loginId) {
+		boolean exist = false;
 
 		try {
+			con = getConnection();
+			ps = con.prepareStatement("select * from users where loginId=?");
+			ps.setString(1, loginId);
 
-			con = getConnection(); // データベース接続情報
-			ps = con.prepareStatement("select * from users where loginId like ?"); // SQL用意
-			ps.setString(1, "%" + loginId + "%");
+			//SQLの実行
+			ResultSet rst = ps.executeQuery();
 
-			ResultSet rst = ps.executeQuery(); //SQLの実行
-
-			// データがとれたらオブジェクトにセットしリストに追加する
-			while (rst.next()) {
-				UserBean user = new UserBean();
-				user.setUserId(rst.getInt(1));
-				user.setLoginId(rst.getString(2));
-				user.setPassword(rst.getString(3));
-				user.setUserName(rst.getString(4));
-				user.setIcon(rst.getString(5));
-				user.setProfile(rst.getString(6));
-				list.add(user);
+			// 検索結果があれば重複あり
+			if (rst.next()) {
+				exist = true;
 			}
+
+			// 検索結果がなければ重複無し
+			else {
+				exist = false;
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+
 			// データベース切断処理
 			close(ps);
 			close(con);
 		}
-		return list;
-	}
-
-	// DBからアイコンでユーザを検索する
-	public ArrayList<UserBean> SearchUserByIcon(String icon) {
-
-		ArrayList<UserBean> list = new ArrayList<>();
-
-		try {
-
-			con = getConnection(); // データベース接続情報
-			ps = con.prepareStatement("select * from users where icon=?"); // SQL用意
-			ps.setString(1, icon);
-
-			ResultSet rst = ps.executeQuery(); //SQLの実行
-
-			// データがとれたらオブジェクトにセットしリストに追加する
-			while (rst.next()) {
-				UserBean user = new UserBean();
-				user.setUserId(rst.getInt(1));
-				user.setLoginId(rst.getString(2));
-				user.setPassword(rst.getString(3));
-				user.setUserName(rst.getString(4));
-				user.setIcon(rst.getString(5));
-				user.setProfile(rst.getString(6));
-				list.add(user);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			// データベース切断処理
-			close(ps);
-			close(con);
-		}
-		return list;
-	}
-
-	// DBからプロフィールでユーザを検索する
-	public ArrayList<UserBean> SearchUserByProfile(String profile) {
-
-		ArrayList<UserBean> list = new ArrayList<>();
-
-		try {
-
-			con = getConnection(); // データベース接続情報
-			ps = con.prepareStatement("select * from users where profile like ?"); // SQL用意
-			ps.setString(1, "%" + profile + "%");
-
-			ResultSet rst = ps.executeQuery(); //SQLの実行
-
-			// データがとれたらオブジェクトにセットしリストに追加する
-			while (rst.next()) {
-				UserBean user = new UserBean();
-				user.setUserId(rst.getInt(1));
-				user.setLoginId(rst.getString(2));
-				user.setPassword(rst.getString(3));
-				user.setUserName(rst.getString(4));
-				user.setIcon(rst.getString(5));
-				user.setProfile(rst.getString(6));
-				list.add(user);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			// データベース切断処理
-			close(ps);
-			close(con);
-		}
-		return list;
+		return exist;
 	}
 }

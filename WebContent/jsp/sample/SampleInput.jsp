@@ -27,9 +27,9 @@
 			<logic:notEmpty name="userName">
 				<bean:parameter id="name" name="userName" />
 				<html:text property="userName" size="40" maxlength="64"
-					value="<%=name%>" />
+					value="<%=name%>" errorStyle="background-color:pink" />
 			</logic:notEmpty>
-			<html:text property="userName" size="40" maxlength="64" />
+			<html:text property="userName" size="40" maxlength="64" errorStyle="background-color:pink" />
 			<!-- エラーがあれば表示 -->
 			<html:errors property="userName" />
 		</p>
@@ -39,9 +39,9 @@
 			<logic:notEmpty name="loginId">
 				<bean:parameter id="ID" name="loginId" />
 				<html:text property="loginId" size="40" maxlength="32"
-					value="<%=ID%>" />
+					value="<%=ID%>" errorStyle="background-color:pink" />
 			</logic:notEmpty>
-			<html:text property="loginId" size="40" maxlength="32" />
+			<html:text property="loginId" size="40" maxlength="32" errorStyle="background-color:pink" />
 			<!-- エラーがあれば表示 -->
 			<html:errors property="loginId" />
 		</p>
@@ -51,19 +51,20 @@
 			<logic:notEmpty name="password">
 				<bean:parameter id="pass" name="password" />
 				<html:password redisplay="false" property="password" size="40"
-					maxlength="32" value="<%=pass%>" />
+					maxlength="32" value="<%=pass%>" errorStyle="background-color:pink" />
 			</logic:notEmpty>
 			<html:password redisplay="false" property="password" size="40"
-				maxlength="32" />
+				maxlength="32" errorStyle="background-color:pink" />
 			<!-- エラーがあれば表示 -->
 			<html:errors property="password" />
 		</p>
+
 		<p>
 			<!-- アイコン選択 -->
 			Select your icon.<br />
 			<html:select property="icon">
-				<option value="icon-user">male</option>
-				<option value="icon-user-female">female</option>
+				<option value="icon-user" <logic:match name="icon" value="icon-user">select</logic:match>>male</option>
+				<option value="icon-user-female"<logic:match name="icon" value="icon-user-female">select</logic:match>>female</option>
 				<option value="icon-magic-wand">wand</option>
 				<option value="icon-plugin">plugin</option>
 				<option value="icon-rocket">rocket</option>
@@ -85,9 +86,9 @@
 			<logic:notEmpty name="profile">
 				<bean:parameter id="profile" name="profile" />
 				<html:textarea property="profile" cols="20" rows="10"
-					value="<%=profile%>" />
+					value="<%=profile%>" errorStyle="background-color:pink" />
 			</logic:notEmpty>
-			<html:textarea property="profile" cols="20" rows="10" />
+			<html:textarea property="profile" cols="40" rows="10" errorStyle="background-color:pink" />
 			<!-- エラーがあれば表示 -->
 			<html:errors property="profile" />
 		</p>

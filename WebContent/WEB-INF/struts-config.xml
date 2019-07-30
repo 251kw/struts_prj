@@ -102,6 +102,7 @@
             validate="true">
             <forward name="cancel" path="/jsp/sample/SampleTop.jsp"/>
             <forward name="success" path="/jsp/sample/SampleConfirm.jsp"/>
+            <forward name="error" path="/jsp/sample/SampleInput.jsp" />
         </action>
 
      	<action

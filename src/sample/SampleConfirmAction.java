@@ -32,39 +32,40 @@ public class SampleConfirmAction extends Action {
 		if (this.isCancelled(request)) {
 			status = "cancel";
 		}
+
 		// 登録処理
 		else {
+
 			// 画面より名前を取得する
 			SampleActionForm sampleForm = (SampleActionForm) form;
+			String loginId = sampleForm.getLoginId();
+			String password = sampleForm.getPassword();
 			String name = sampleForm.getUserName();
+			String icon = sampleForm.getIcon();
+			String profile = sampleForm.getProfile();
 
 			// 初期値を設定する
 			ActionMessages msg = new ActionMessages();
-
-			//ユーザ情報を登録する
 			SampleDBAccess dba = new SampleDBAccess();
 
-			//登録に失敗したら
-			if (!dba.InsertUser(name)) {
+			// ユーザ登録に失敗したら
+			if (!dba.InsertUser(loginId,password,name,icon,profile)) {
+				status = "error";
 
-				//エラーメッセージを登録
+				// エラーメッセージを登録
 				msg.add(ActionMessages.GLOBAL_MESSAGE,
 						new ActionMessage("errors.register"));
+				saveErrors(request, msg);
 			}
 
-			//登録に成功したら
-			if (msg.isEmpty()) {
+			// 登録に成功したら
+			else {
 				status = "success";
 
-				//メッセージを登録、登録完了のメッセージを表示する
+				// 登録完了のメッセージを表示する
 				msg.add(ActionMessages.GLOBAL_MESSAGE,
 						new ActionMessage("complete.register"));
 				saveMessages(request, msg);
-
-				// 登録に失敗した場合、登録画面にエラーメッセージを表示する
-			} else {
-				status = "error";
-				saveErrors(request, msg);
 			}
 		}
 		return (mapping.findForward(status));
