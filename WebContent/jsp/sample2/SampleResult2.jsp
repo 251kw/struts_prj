@@ -26,7 +26,7 @@
 				<td><html:hidden name="SampleActionForm2" property="icon"
 						write="true" /></td>
 				<td><html:hidden name="SampleActionForm2" property="profile"
-						write="true" />
+						write="true" /></td>
 			</tr>
 		</table>
 		<br> <br>

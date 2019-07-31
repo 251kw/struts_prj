@@ -13,19 +13,21 @@
 <link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
-<%
+<%-- <%
 	String userName = (String) request.getAttribute("userName");
 		if (userName == null) {
 			userName = "";
 		}
-%>
+%> --%>
 <body>
 	<html:form action="/input2">
 		<html:errors />
 		<table>
 			<tr>
 				<th>ログインID</th>
-				<td><html:text property="loginId" size="16" /></td>
+				<bean:parameter id="loginId" name="loginId" value="" />
+				<td><html:text property="loginId" value="<%=loginId%>"
+						size="16" /></td>
 			</tr>
 			<tr>
 				<th>パスワード</th>
@@ -33,6 +35,7 @@
 			</tr>
 			<tr>
 				<th>ユーザーネーム</th>
+				<bean:parameter id="userName" name="userName" value="" />
 				<td><html:text property="userName" value="<%=userName%>"
 						size="16" /></td>
 			</tr>
@@ -40,12 +43,14 @@
 				<th>アイコン</th>
 				<td><html:select property="icon">
 						<html:option value="pe-7s-user">male</html:option>
-						<html:option value="pe-7s-user-female">female</html:option>
+						<html:option value="pe-7s-user-female" >female</html:option>
 					</html:select></td>
 			</tr>
 			<tr>
 				<th>プロフィール</th>
-				<td><html:text property="profile" size="16" /></td>
+				<bean:parameter id="profile" name="profile" value="" />
+				<td><html:text property="profile" value="<%=profile%>"
+						size="16" /></td>
 			</tr>
 		</table>
 		<br>

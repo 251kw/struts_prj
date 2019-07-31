@@ -27,8 +27,10 @@ public class SampleInputAction2 extends Action {
 	boolean STATE = true;
 	String btn = request.getParameter("btn");
 
+
 		//submitボタンが押されたら
 		if(Teisu.SUBMIT.equals(btn)) {
+
 
 			return (mapping.findForward(Teisu.SUCCESS));
 
