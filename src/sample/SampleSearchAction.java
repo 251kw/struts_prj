@@ -62,16 +62,33 @@ public class SampleSearchAction extends Action {
 
 			// 初期値を設定する
 			ActionMessages msg = new ActionMessages();
+			SampleDBAccess dba = new SampleDBAccess();
 
 			//何も入力されていないとき
 			if (items.size() == 0) {
 
-				status = "error";
+				// 全ユーザ検索
+				List<UserBean> userList = dba.SearchAllUser();
 
-				// メッセージを登録
-				msg.add(ActionMessages.GLOBAL_MESSAGE,
-						new ActionMessage("errors.search"));
-				saveErrors(request, msg);
+				// 検索結果がなければ
+				if (userList.size() == 0) {
+
+					status = "null";
+
+					// メッセージを登録
+					msg.add(ActionMessages.GLOBAL_MESSAGE,
+							new ActionMessage("null.search"));
+					saveMessages(request, msg);
+				}
+
+				// 検索結果があれば
+				else {
+
+					status = "success";
+
+					// 検索結果をリクエストに保存
+					request.setAttribute("userlist", userList);
+				}
 			}
 
 			//条件が入力されているとき
@@ -81,7 +98,6 @@ public class SampleSearchAction extends Action {
 				List<UserBean> userList = new ArrayList<>();
 
 				// DBからユーザを検索する
-				SampleDBAccess dba = new SampleDBAccess();
 				userList = dba.SearchUsers(items);
 
 				// 検索結果がなければ

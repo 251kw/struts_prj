@@ -22,35 +22,62 @@
 	<html:form action="/search">
 		<p>
 			Search by Name.<br />
-			<html:text property="userName" size="40" maxlength="64" />
+			<html:text property="userName" size="40" maxlength="64" errorStyle="background-color:pink" />
+			<logic:notEmpty name="userName">
+				<bean:parameter id="name" name="userName" />
+				<html:text property="userName" size="40" maxlength="64"
+					value="<%=name%>" errorStyle="background-color:pink" />
+			</logic:notEmpty>
+			<!-- エラーがあれば表示 -->
+			<html:errors property="userName" />
 		</p>
 		<p>
 			Search by login ID.<br />
-			<html:text property="loginId" size="40" maxlength="32" />
+			<html:text property="loginId" size="40" maxlength="32" errorStyle="background-color:pink" />
+			<logic:notEmpty name="loginId">
+				<bean:parameter id="ID" name="loginId" />
+				<html:text property="loginId" size="40" maxlength="32"
+					value="<%=ID%>" errorStyle="background-color:pink" />
+			</logic:notEmpty>
+			<!-- エラーがあれば表示 -->
+			<html:errors property="loginId" />
 		</p>
 		<p>
 			Search by icon.<br />
-			<html:select property="icon">
-				<option value="icon-user">male</option>
-				<option value="icon-user-female">female</option>
-				<option value="icon-magic-wand">wand</option>
-				<option value="icon-plugin">plugin</option>
-				<option value="icon-rocket">rocket</option>
-				<option value="icon-smile">smile</option>
-				<option value="icon-wine">wine</option>
-				<option value="icon-cash">cash</option>
-				<option value="icon-gym">gym</option>
-				<option value="icon-diamond">diamond</option>
-				<option value="icon-star">star</option>
-				<option value="icon-science">science</option>
-				<option value="icon-film">film</option>
-				<option value="icon-plane">plane</option>
-				<option value="icon-joy">joy</option>
+			<% String icon = request.getParameter("icon");
+			   if(icon == null){
+				   icon = "--";
+			   }
+			%>
+			<html:select property="icon" value="<%=icon %>">
+				<html:option value="">--</html:option>
+				<html:option value="icon-user">male</html:option>
+				<html:option value="icon-user-female">female</html:option>
+				<html:option value="icon-magic-wand">wand</html:option>
+				<html:option value="icon-plugin">plugin</html:option>
+				<html:option value="icon-rocket">rocket</html:option>
+				<html:option value="icon-smile">smile</html:option>
+				<html:option value="icon-wine">wine</html:option>
+				<html:option value="icon-cash">cash</html:option>
+				<html:option value="icon-gym">gym</html:option>
+				<html:option value="icon-diamond">diamond</html:option>
+				<html:option value="icon-star">star</html:option>
+				<html:option value="icon-science">science</html:option>
+				<html:option value="icon-film">film</html:option>
+				<html:option value="icon-plane">plane</html:option>
+				<html:option value="icon-joy">joy</html:option>
 			</html:select>
 		</p>
 		<p>
 			Search by Profile.<br />
-			<html:text property="profile" size="40" maxlength="128" />
+			<html:text property="profile" size="40" maxlength="128" errorStyle="background-color:pink" />
+			<logic:notEmpty name="profile">
+				<bean:parameter id="profile" name="profile" />
+				<html:text property="profile" size="40" maxlength="128"
+					value="<%=profile%>" errorStyle="background-color:pink" />
+			</logic:notEmpty>
+			<!-- エラーがあれば表示 -->
+			<html:errors property="profile" />
 		</p>
 		<p>
 			<html:cancel>

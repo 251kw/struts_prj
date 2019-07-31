@@ -159,4 +159,40 @@ public class SampleDBAccess extends DBAccess {
 		}
 		return exist;
 	}
+
+	// 全ユーザ検索
+	public ArrayList<UserBean> SearchAllUser() {
+
+		// 検索結果を入れるリスト
+		ArrayList<UserBean> userList = new ArrayList<>();
+
+		try {
+			con = getConnection();
+			ps = con.prepareStatement("select * from users");
+
+			//SQLの実行
+			ResultSet rst = ps.executeQuery();
+
+			// 検索結果があれば重複あり
+			while (rst.next()) {
+				UserBean user = new UserBean();
+				user.setUserId(rst.getInt(1));
+				user.setLoginId(rst.getString(2));
+				user.setPassword(rst.getString(3));
+				user.setUserName(rst.getString(4));
+				user.setIcon(rst.getString(5));
+				user.setProfile(rst.getString(6));
+				userList.add(user);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			// データベース切断処理
+			close(ps);
+			close(con);
+		}
+		return userList;
+	}
 }

@@ -39,13 +39,6 @@ public class SampleInputAction extends Action {
 			// 初期値を設定する
 			SampleActionForm sampleForm = (SampleActionForm) form;
 			SampleDBAccess dba = new SampleDBAccess();
-			ActionMessages msg = new ActionMessages();
-
-			// iconの値を保持
-			String icon = sampleForm.getIcon();
-			if("icon-user".equals(icon)) {
-				msg.add("", new ActionMessage("selected"));
-			}
 
 			// 画面よりログインIDを取得する
 			String loginId = sampleForm.getLoginId();
@@ -55,6 +48,7 @@ public class SampleInputAction extends Action {
 				status = "error";
 
 				// エラーメッセージの登録
+				ActionMessages msg = new ActionMessages();
 			    msg.add("loginId", new ActionMessage("errors.loginId"));
 			    saveErrors(request, msg);
 			}
