@@ -126,6 +126,15 @@
 			<forward name="null" path="/jsp/sample/SampleSearch.jsp" />
 		</action>
 
+		<action path="/Search2"
+				type="sample2.SampleSearchAction2"
+				name="SampleActionForm2"
+				scope="request"
+				validate="false">
+			<forward name="success" path="/jsp/sample2/SampleSResult2.jsp"/>
+
+		</action>
+
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction"
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction"
 			name="inputForm" scope="request" validate="true" input="/pages/Input.jsp"/>

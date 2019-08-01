@@ -20,6 +20,7 @@
 		}
 %> --%>
 <body>
+<div class="text-center">登録内容を入力してください。</div>
 	<html:form action="/input2">
 		<html:errors />
 		<table>
@@ -55,10 +56,12 @@
 		</table>
 		<br>
 		<br>
+		<div class="text-center">
 		<html:submit property="btn">
 			<bean:message key="button.submit" />
 		</html:submit>
 		<html:cancel value="cancel" />
+		</div>
 	</html:form>
 </body>
 </html:html>

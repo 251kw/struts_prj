@@ -8,27 +8,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>確認画面</title>
+<link rel="stylesheet" type="text/css" href="./css/example.css" />
+<link rel="stylesheet" href="./css/skyblue.css" />
+<link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
+<link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
+	<div class="text-center">以下の内容で登録します。</div>
 	<html:form action="/confirm2">
+		ログインID：
 		<bean:write name="SampleActionForm2" property="loginId" />
-		<bean:write name="SampleActionForm2" property="password" />
-		<bean:write name="SampleActionForm2" property="userName" />
-		<bean:write name="SampleActionForm2" property="icon" />
-		<bean:write name="SampleActionForm2" property="profile"/>
-
-		<html:hidden name="SampleActionForm2" property="loginId" />
-		<html:hidden name="SampleActionForm2" property="password"/>
-		<html:hidden name="SampleActionForm2" property="userName" />
-		<html:hidden name="SampleActionForm2" property="icon"/>
-		<html:hidden name="SampleActionForm2" property="profile"/>
 		<br>
-		<html:submit property="btn">
-			<bean:message key="button.ok" />
-		</html:submit>
-		<html:submit property="btn">
-			<bean:message key="button.cancel" />
-		</html:submit>
+		パスワード：
+		<bean:write name="SampleActionForm2" property="password" />
+		<br>
+		ユーザーネーム：
+		<bean:write name="SampleActionForm2" property="userName" />
+		<br>
+		アイコン：
+		<bean:write name="SampleActionForm2" property="icon" />
+		<br>
+		プロフィール：
+		<bean:write name="SampleActionForm2" property="profile" />
+		<br>
+
+		<!-- 結果画面に値を渡す -->
+		<html:hidden name="SampleActionForm2" property="loginId" />
+		<html:hidden name="SampleActionForm2" property="password" />
+		<html:hidden name="SampleActionForm2" property="userName" />
+		<html:hidden name="SampleActionForm2" property="icon" />
+		<html:hidden name="SampleActionForm2" property="profile" />
+		<br>
+
+		<div class="text-center">
+			<html:submit property="btn">
+				<bean:message key="button.ok" />
+			</html:submit>
+			<html:submit property="btn">
+				<bean:message key="button.cancel" />
+			</html:submit>
+		</div>
 	</html:form>
 </body>
 </html:html>

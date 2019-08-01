@@ -14,23 +14,26 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
+<div class="text-center">以下の内容で登録が完了しました。</div>
+		ログインID:
+		<bean:parameter name="loginId" id="loginId" /><%=loginId%><br>
+
+		パスワード:
+		<bean:parameter name="password" id="password" /><%=password%><br>
+
+		ユーザーネーム:
+		<bean:parameter name="userName" id="userName" /><%=userName%><br>
+
+		アイコン:
+		<bean:parameter name="icon" id="icon" /><%=icon%><br>
+
+		 プロフィール:
+		<bean:parameter name="profile" id="profile" /><%=profile%><br>
+
+	<br>
+	<br>
 	<div class="text-center">
-		<table border="1">
-			<tr>
-				<td><html:hidden name="SampleActionForm2" property="loginId"
-						write="true" />
-				<td><html:hidden name="SampleActionForm2" property="password"
-						write="true" /></td>
-				<td><html:hidden name="SampleActionForm2" property="userName"
-						write="true" /></td>
-				<td><html:hidden name="SampleActionForm2" property="icon"
-						write="true" /></td>
-				<td><html:hidden name="SampleActionForm2" property="profile"
-						write="true" /></td>
-			</tr>
-		</table>
-		<br> <br>
-		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">次へ</html:link>
+		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">トップへ</html:link>
 	</div>
 </body>
 </html>
