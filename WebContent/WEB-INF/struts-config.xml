@@ -85,6 +85,7 @@
 			    input="/jsp/sample2/SampleInput2.jsp"
 			    validate="true">
 			<forward name="success" path="/jsp/sample2/SampleConfirm2.jsp" />
+			<forward name="error" path="/jsp/sample2/SampleInput2.jsp" />
 			<forward name="cancel" path="/jsp/sample2/SampleTop2.jsp" />
 		</action>
 
@@ -132,6 +133,7 @@
 				scope="request"
 				validate="false">
 			<forward name="success" path="/jsp/sample2/SampleSResult2.jsp"/>
+			<forward name="cancel" path="/jsp/sample2/SampleSearch2.jsp"/>
 
 		</action>
 

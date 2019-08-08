@@ -23,6 +23,7 @@
 <div class="text-center">登録内容を入力してください。</div>
 	<html:form action="/input2">
 		<html:errors />
+
 		<table>
 			<tr>
 				<th>ログインID</th>

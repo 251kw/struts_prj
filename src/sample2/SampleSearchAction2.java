@@ -28,12 +28,21 @@ public class SampleSearchAction2 extends Action {
 
 		SampleActionForm2 saf = (SampleActionForm2)form;
 		String loginId = saf.getLoginId();
+		String userName = saf.getUserName();
+		String icon = saf.getIcon();
+		String profile = saf.getProfile();
 		SampleDBAccess2 dba = new SampleDBAccess2();
 
-		ArrayList<UserBean2> Suserlist = dba.getSUser(loginId);
+		//like検索の結果を受け取る
+		ArrayList<UserBean2> Suserlist = dba.getSUser(loginId,userName,icon,profile);
 		request.setAttribute("Suser", Suserlist);
 
-
+//		String btn = request.getParameter("btn");
+//		if(btn.equals(Teisu.CANCEL)) {
+//			return (mapping.findForward(Teisu.CANCEL));
+//		}else {
+//			return (mapping.findForward(Teisu.SUCCESS));
+//		}
 		return (mapping.findForward(Teisu.SUCCESS));
 	}
 }

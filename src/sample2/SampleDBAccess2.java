@@ -74,17 +74,37 @@ public class SampleDBAccess2 extends DBAccess {
 		return result;
 	}
 
-	public ArrayList<UserBean2> getSUser(String loginId){
+	public ArrayList<UserBean2> getSUser(String loginId, String userName, String icon, String profile){
 		ArrayList<UserBean2> userlist = new ArrayList<UserBean2>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
-		String sql = "SELECT * FROM users WHERE loginId=?";
+		String sql = "SELECT * FROM users WHERE (loginId LIKE ? AND userName LIKE ? AND icon LIKE ? AND profile LIKE ?)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, loginId);
+//			pstmt.setString(1, "%" + loginId + "%");
+//			pstmt.setString(2, "%" + userName + "%");
+//			pstmt.setString(3, "%" + icon );
+//			pstmt.setString(4, "%" + profile + "%");
+
+			if(loginId=="") {
+				pstmt.setString(1, loginId + "%");
+			}else {
+				pstmt.setString(1, "%" + loginId + "%");
+			}
+			if(userName=="") {
+				pstmt.setString(2, userName + "%");
+			}else {
+				pstmt.setString(2, "%" + userName + "%");
+			}
+
+			pstmt.setString(3, "%" + icon);
+
+
+			pstmt.setString(4, "%" + profile + "%");
+
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
@@ -108,5 +128,37 @@ public class SampleDBAccess2 extends DBAccess {
 		return userlist;
 
 	}
+
+	public boolean CheckUserId(String loginId){
+
+		boolean result = true;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		String sql = "SELECT * FROM users WHERE loginId=?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,loginId);
+
+			rset = pstmt.executeQuery();
+
+			if(rset.next()) {
+				result = false;
+			}
+
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rset);
+			close(conn);
+		}
+
+		return result;
+	}
+
 
 }
