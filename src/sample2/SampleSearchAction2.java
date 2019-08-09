@@ -37,12 +37,12 @@ public class SampleSearchAction2 extends Action {
 		ArrayList<UserBean2> Suserlist = dba.getSUser(loginId,userName,icon,profile);
 		request.setAttribute("Suser", Suserlist);
 
-//		String btn = request.getParameter("btn");
-//		if(btn.equals(Teisu.CANCEL)) {
-//			return (mapping.findForward(Teisu.CANCEL));
-//		}else {
-//			return (mapping.findForward(Teisu.SUCCESS));
-//		}
-		return (mapping.findForward(Teisu.SUCCESS));
+		String btn = request.getParameter("btn");
+		if(btn.equals(Teisu.CANCEL)) {
+			return (mapping.findForward(Teisu.CANCEL));
+		}else {
+			return (mapping.findForward(Teisu.SUCCESS));
+		}
+		//return (mapping.findForward(Teisu.SUCCESS));
 	}
 }

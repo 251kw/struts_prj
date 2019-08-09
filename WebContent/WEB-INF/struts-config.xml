@@ -86,7 +86,7 @@
 			    validate="true">
 			<forward name="success" path="/jsp/sample2/SampleConfirm2.jsp" />
 			<forward name="error" path="/jsp/sample2/SampleInput2.jsp" />
-			<forward name="cancel" path="/jsp/sample2/SampleTop2.jsp" />
+			<forward name="Cancel" path="/jsp/sample2/SampleTop2.jsp" />
 		</action>
 
 		<action path="/confirm"
@@ -105,7 +105,7 @@
 			    name="SampleActionForm2"
 			    validate="false">
 			<forward name="success" path="/jsp/sample2/SampleResult2.jsp" />
-			<forward name="cancel" path="/jsp/sample2/SampleInput2.jsp" />
+			<forward name="Cancel" path="/jsp/sample2/SampleInput2.jsp" />
 		</action>
 
 		<action path="/result"
@@ -133,7 +133,7 @@
 				scope="request"
 				validate="false">
 			<forward name="success" path="/jsp/sample2/SampleSResult2.jsp"/>
-			<forward name="cancel" path="/jsp/sample2/SampleSearch2.jsp"/>
+			<forward name="Cancel" path="/jsp/sample2/SampleTop2.jsp"/>
 
 		</action>
 

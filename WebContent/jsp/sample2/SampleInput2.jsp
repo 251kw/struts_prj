@@ -13,12 +13,7 @@
 <link rel="stylesheet" href="./css/pe-icon-7-stroke.css" />
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
-<%-- <%
-	String userName = (String) request.getAttribute("userName");
-		if (userName == null) {
-			userName = "";
-		}
-%> --%>
+
 <body>
 <div class="text-center">登録内容を入力してください。</div>
 	<html:form action="/input2">
@@ -43,6 +38,7 @@
 			</tr>
 			<tr>
 				<th>アイコン</th>
+				<bean:parameter name="icon" id="icon" value="" /><%=icon %>
 				<td><html:select property="icon">
 						<html:option value="pe-7s-user">male</html:option>
 						<html:option value="pe-7s-user-female" >female</html:option>
@@ -61,7 +57,7 @@
 		<html:submit property="btn">
 			<bean:message key="button.submit" />
 		</html:submit>
-		<html:cancel value="cancel" />
+		<html:cancel value="Cancel" />
 		</div>
 	</html:form>
 </body>

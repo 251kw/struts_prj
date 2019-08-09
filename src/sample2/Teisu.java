@@ -5,8 +5,9 @@ public class Teisu {
 	public static final String SUCCESS = "success";
 	public static final String FAILURE = "failure";
 	public static final String ERROR = "error";
-	public static final String CANCEL = "cancel";
+	public static final String CANCEL = "Cancel";
 //押されたボタンを判定
 	public static final String OK = "OK";
 	public static final String SUBMIT = "Submit";
+
 }

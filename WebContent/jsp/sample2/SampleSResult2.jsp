@@ -16,16 +16,17 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
-<div class="text-center">検索結果は以下の通りです。</div>
+	<div class="text-center">検索結果は以下の通りです。</div>
+
 	<logic:present name="Suser" scope="request">
 		<table class="table">
-		<tr>
-		<th>ログインID</th>
-		<th>パスワード</th>
-		<th>ユーザーネーム</th>
-		<th>アイコン</th>
-		<th>プロフィール</th>
-		</tr>
+			<tr>
+				<th>ログインID</th>
+				<th>パスワード</th>
+				<th>ユーザーネーム</th>
+				<th>アイコン</th>
+				<th>プロフィール</th>
+			</tr>
 			<logic:iterate id="user" name="Suser" scope="request">
 				<tr>
 					<td><bean:write name="user" property="loginId" /></td>
@@ -37,5 +38,10 @@
 			</logic:iterate>
 		</table>
 	</logic:present>
+	<br>
+	<br>
+	<div class="text-center">
+		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">トップへ</html:link>
+	</div>
 </body>
 </html:html>
