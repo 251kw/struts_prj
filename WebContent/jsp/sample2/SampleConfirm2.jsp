@@ -32,7 +32,7 @@
 		<bean:write name="SampleActionForm2" property="profile" />
 		<br>
 
-		<!-- 結果画面に値を渡す -->
+		<!-- 結果画面に値を渡す --><!-- 入力画面で保持する値を渡す -->
 		<html:hidden name="SampleActionForm2" property="loginId" />
 		<html:hidden name="SampleActionForm2" property="password" />
 		<html:hidden name="SampleActionForm2" property="userName" />

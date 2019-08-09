@@ -38,10 +38,10 @@
 			</tr>
 			<tr>
 				<th>アイコン</th>
-				<bean:parameter name="icon" id="icon" value="" /><%=icon %>
-				<td><html:select property="icon">
+				<bean:parameter name="icon" id="icon" value="" />
+				<td><html:select property="icon" value="<%=icon %>">
 						<html:option value="pe-7s-user">male</html:option>
-						<html:option value="pe-7s-user-female" >female</html:option>
+						<html:option value="pe-7s-user-female">female</html:option>
 					</html:select></td>
 			</tr>
 			<tr>
