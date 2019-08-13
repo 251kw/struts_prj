@@ -43,6 +43,8 @@ public class SampleActionForm2 extends ValidatorForm {
 	private String password = null;
 	private String icon = null;
 	private String profile = null;
+	private String blood = null;
+	private String[] hobby = null;
 
 	// ------------------------------------------------------------ Constructors
 
@@ -64,6 +66,7 @@ public class SampleActionForm2 extends ValidatorForm {
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 
 		this.userName = null;
+		this.hobby = null;
 
 		//文字化け対策
 		try {
@@ -132,6 +135,14 @@ public class SampleActionForm2 extends ValidatorForm {
 		return profile;
 	}
 
+	public String getBlood() {
+		return blood;
+	}
+
+	public String[] getHobby() {
+		return hobby;
+	}
+
 	/**
 	 * Sets the hidden.
 	 * @param hidden The hidden to set
@@ -160,5 +171,15 @@ public class SampleActionForm2 extends ValidatorForm {
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
+
+	public void setBlood(String blood) {
+		this.blood = blood;
+	}
+
+	public void setHobby(String[] hobby) {
+		this.hobby = hobby;
+	}
+
+
 
 }

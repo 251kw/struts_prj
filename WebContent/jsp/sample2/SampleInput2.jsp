@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<div class="text-center">登録内容を入力してください。</div>
+	<div class="text-center">登録内容を入力してください。</div>
 	<html:form action="/input2">
 		<html:errors />
 
@@ -39,7 +39,7 @@
 			<tr>
 				<th>アイコン</th>
 				<bean:parameter name="icon" id="icon" value="" />
-				<td><html:select property="icon" value="<%=icon %>">
+				<td><html:select property="icon" value="<%=icon%>">
 						<html:option value="pe-7s-user">male</html:option>
 						<html:option value="pe-7s-user-female">female</html:option>
 					</html:select></td>
@@ -50,14 +50,27 @@
 				<td><html:text property="profile" value="<%=profile%>"
 						size="16" /></td>
 			</tr>
+			<tr>
+				<th>血液型<th>
+				<html:radio property="blood" value="A">A型</html:radio>
+				<html:radio property="blood" value="B">B型</html:radio>
+				<html:radio property="blood" value="O">O型</html:radio>
+				<html:radio property="blood" value="AB">AB型</html:radio>
+			</tr>
+			<tr>
+				<th>趣味</th>
+				<td><html:multibox property="hobby" value="music"/>音楽
+					<html:multibox property="hobby" value="book"/>読書
+					<html:multibox property="hobby" value="travel"/>旅行</td>
+			</tr>
 		</table>
 		<br>
 		<br>
 		<div class="text-center">
-		<html:submit property="btn">
-			<bean:message key="button.submit" />
-		</html:submit>
-		<html:cancel value="Cancel" />
+			<html:submit property="btn">
+				<bean:message key="button.submit" />
+			</html:submit>
+			<html:cancel value="Cancel" />
 		</div>
 	</html:form>
 </body>

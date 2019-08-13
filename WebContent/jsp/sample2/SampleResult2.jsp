@@ -30,6 +30,15 @@
 		 プロフィール:
 		<bean:parameter name="profile" id="profile" /><%=profile%><br>
 
+		血液型:
+		<bean:parameter name="blood" id="blood" /><%=blood %><br>
+
+<%-- 		趣味 ：
+		<bean:parameter name="hobby" id="Hobby"/>
+		<logic:iterate id="HOBBY" property="<%=Hobby %>">
+		<bean:write name="HOBBY"/>,
+		</logic:iterate> --%>
+
 	<br>
 	<br>
 	<div class="text-center">

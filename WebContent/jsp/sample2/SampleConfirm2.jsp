@@ -31,6 +31,14 @@
 		プロフィール：
 		<bean:write name="SampleActionForm2" property="profile" />
 		<br>
+		血液型 ：
+		<bean:write name="SampleActionForm2" property="blood" />
+		<br>
+
+		趣味　：
+		<logic:iterate id="Hobby" name="SampleActionForm2" property="hobby">
+		<bean:write name="Hobby"/>,
+		</logic:iterate>
 
 		<!-- 結果画面に値を渡す --><!-- 入力画面で保持する値を渡す -->
 		<html:hidden name="SampleActionForm2" property="loginId" />
@@ -38,7 +46,10 @@
 		<html:hidden name="SampleActionForm2" property="userName" />
 		<html:hidden name="SampleActionForm2" property="icon" />
 		<html:hidden name="SampleActionForm2" property="profile" />
-		<br>
+		<html:hidden name="SampleActionForm2" property="blood" />
+		<html:hidden name="SampleActionForm2" property="hobby"/>
+
+
 
 		<div class="text-center">
 			<html:submit property="btn">
