@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
-	<table class="table">
+	<table class="table-bordered">
 		<tr>
 			<td><html:link href="/struts_prj/jsp/sample2/SampleInput2.jsp">ユーザー登録</html:link></td>
 		</tr>

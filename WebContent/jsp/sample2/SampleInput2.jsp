@@ -61,7 +61,8 @@
 				<th>趣味</th>
 				<td><html:multibox property="hobby" value="music"/>音楽
 					<html:multibox property="hobby" value="book"/>読書
-					<html:multibox property="hobby" value="travel"/>旅行</td>
+					<html:multibox property="hobby" value="travel"/>旅行
+					</td>
 			</tr>
 		</table>
 		<br>
