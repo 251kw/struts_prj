@@ -14,13 +14,23 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
-	<table class="table-bordered">
-		<tr>
-			<td><html:link href="/struts_prj/jsp/sample2/SampleInput2.jsp">ユーザー登録</html:link></td>
-		</tr>
-		<tr>
-			<td><html:link href="/struts_prj/jsp/sample2/SampleSearch2.jsp">ユーザー検索</html:link></td>
-		</tr>
-	</table>
+	<div class="bg-success padding-y-5">
+		<div class="container padding-y-5 text-center">
+			<h1>トップ画面</h1>
+		</div>
+	</div>
+	<div class="padding-y-5 text-center">
+		<div style="width: 40%" class="container padding-y-5 text-center">
+			<table class="table">
+				<tr>
+					<td><html:link href="/struts_prj/jsp/sample2/SampleInput2.jsp">ユーザー登録</html:link></td>
+				</tr>
+				<tr>
+					<td><html:link
+							href="/struts_prj/jsp/sample2/SampleSearch2.jsp">ユーザー検索</html:link></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

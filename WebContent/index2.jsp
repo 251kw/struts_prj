@@ -13,6 +13,13 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
+	<div class="bg-success padding-y-5">
+		<div class="container padding-y-5 text-center">
+			<h1>
+				struts演習
+			</h1>
+		</div>
+	</div>
 	<div class="text-center">
 	<br><br>
 		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">

@@ -14,7 +14,13 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
+	<div class="bg-success padding-y-5">
+		<div class="container padding-y-5 text-center">
+			<h1>結果画面</h1>
+		</div>
+	</div>
 <div class="text-center">以下の内容で登録が完了しました。</div>
+	<br><br>
 		ログインID:
 		<bean:parameter name="loginId" id="loginId" /><%=loginId%><br>
 
@@ -34,11 +40,10 @@
 		<bean:parameter name="blood" id="blood" /><%=blood %><br>
 
 		趣味 ：
-		<bean:parameter name="hobby" id="hobby"/>
+		<bean:parameter name="hobby" id="hobby"/><%=hobby %>
 		<logic:iterate id="HOBBY" collection="<%=hobby%>">
 		<bean:write name="HOBBY"/>
 		</logic:iterate>
-
 
 	<br>
 	<br>

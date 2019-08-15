@@ -16,11 +16,16 @@
 <link rel="stylesheet" href="./css/helper.css" />
 </head>
 <body>
+	<div class="bg-success padding-y-5">
+		<div class="container padding-y-5 text-center">
+			<h1>検索結果</h1>
+		</div>
+	</div>
 	<div class="text-center">検索結果は以下の通りです。</div>
 
 	<logic:present name="Suser" scope="request">
 		<table class="table">
-			<tr>
+			<tr class="bg-light">
 				<th>ログインID</th>
 				<th>パスワード</th>
 				<th>ユーザーネーム</th>
@@ -43,5 +48,6 @@
 	<div class="text-center">
 		<html:link href="/struts_prj/jsp/sample2/SampleTop2.jsp">トップへ</html:link>
 	</div>
+	<br><br>
 </body>
 </html:html>
