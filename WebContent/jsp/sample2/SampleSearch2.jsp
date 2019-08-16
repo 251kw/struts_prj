@@ -31,10 +31,21 @@
 				<th class="bg-white">ユーザーネーム</th>
 				<td><html:text property="userName" size="16" /></td>
 			</tr>
+<%-- 			<tr>
+				<th class="bg-light">血液型
+				</th>
+				<td><html:select property="blood" value="">
+						<html:option value="">血液型を選択</html:option>
+						<html:option value="A">A型</html:option>
+						<html:option value="B">B型</html:option>
+						<html:option value="O">O型</html:option>
+						<html:option value="AB">AB型</html:option>
+					</html:select></td>
+			</tr> --%>
 			<tr>
 				<th class="bg-light">アイコン</th>
 				<td><html:select property="icon" value="">
-						<html:option value="">アイコンを選択</html:option>ｓｓ
+						<html:option value="">アイコンを選択</html:option>
 						<html:option value="pe-7s-user">male</html:option>
 						<html:option value="pe-7s-user-female">female</html:option>
 					</html:select></td>

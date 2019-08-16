@@ -40,8 +40,9 @@ public class SampleConfirmAction2 extends Action {
 			String password = saf.getPassword();
 			String icon = saf.getIcon();
 			String profile = saf.getProfile();
+			String blood = saf.getBlood();
 
-			UserBean2 UB2 = new UserBean2(loginId,password,userName,icon,profile);
+			UserBean2 UB2 = new UserBean2(loginId,password,userName,icon,profile,blood);
 			SampleDBAccess2 dba2 = new SampleDBAccess2();
 			boolean result = dba2.InsertUser(UB2);
 

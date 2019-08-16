@@ -31,6 +31,7 @@ public class SampleSearchAction2 extends Action {
 		String userName = saf.getUserName();
 		String icon = saf.getIcon();
 		String profile = saf.getProfile();
+		//String blood = saf.getBlood();
 		SampleDBAccess2 dba = new SampleDBAccess2();
 
 		//like検索の結果を受け取る

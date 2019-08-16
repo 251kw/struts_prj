@@ -40,10 +40,16 @@
 		<bean:parameter name="blood" id="blood" /><%=blood %><br>
 
 		趣味 ：
-		<bean:parameter name="hobby" id="hobby"/><%=hobby %>
+<%-- 		<bean:parameter name="hobby" id="hobby"/>
 		<logic:iterate id="HOBBY" collection="<%=hobby%>">
 		<bean:write name="HOBBY"/>
-		</logic:iterate>
+		</logic:iterate> --%>
+
+ 		<%String [] s = request.getParameterValues("hobby");
+ 			for(String A : s){
+ 		%>
+ 		<%=A %>
+ 		<%} %>
 
 	<br>
 	<br>

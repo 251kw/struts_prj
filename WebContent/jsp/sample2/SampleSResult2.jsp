@@ -31,6 +31,7 @@
 				<th>ユーザーネーム</th>
 				<th>アイコン</th>
 				<th>プロフィール</th>
+				<!-- <th>血液型</th> -->
 			</tr>
 			<logic:iterate id="user" name="Suser" scope="request">
 				<tr>
@@ -39,6 +40,7 @@
 					<td><bean:write name="user" property="userName" /></td>
 					<td><bean:write name="user" property="icon" /></td>
 					<td><bean:write name="user" property="profile" /></td>
+					<%-- <td><bean:write name="user" property="blood" /></td> --%>
 				</tr>
 			</logic:iterate>
 		</table>

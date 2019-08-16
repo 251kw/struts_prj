@@ -52,8 +52,9 @@
 		<html:hidden name="SampleActionForm2" property="icon" />
 		<html:hidden name="SampleActionForm2" property="profile" />
 		<html:hidden name="SampleActionForm2" property="blood" />
-		<html:hidden name="SampleActionForm2" property="hobby"/>
-
+		<logic:iterate id="Hobby" name="SampleActionForm2" property="hobby">
+		<html:hidden property="hobby" write="true" /><%= Hobby %>
+		</logic:iterate>
 
 
 		<div class="text-center">

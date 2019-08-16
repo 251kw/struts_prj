@@ -18,7 +18,7 @@ public class SampleDBAccess2 extends DBAccess {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String sql = "INSERT INTO users (userName)VALUES(?)";
+		String sql = "INSERT INTO struts_users (userName)VALUES(?)";
 
 		try {
 			conn = getConnection();
@@ -48,7 +48,7 @@ public class SampleDBAccess2 extends DBAccess {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		String sql = "INSERT INTO users (loginId, password, userName, icon, profile)VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO struts_users (loginId, password, userName, icon, profile, blood)VALUES(?, ?, ?, ?, ?, ?)";
 
 		try {
 			conn = getConnection();
@@ -58,6 +58,7 @@ public class SampleDBAccess2 extends DBAccess {
 			pstmt.setString(3, user.getUserName());
 			pstmt.setString(4, user.getIcon());
 			pstmt.setString(5, user.getProfile());
+			pstmt.setString(6, user.getBlood());
 
 			int cnt = pstmt.executeUpdate();
 			if (cnt == 1) {
@@ -80,7 +81,7 @@ public class SampleDBAccess2 extends DBAccess {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
-		String sql = "SELECT * FROM users WHERE (loginId LIKE ? AND userName LIKE ? AND icon LIKE ? AND profile LIKE ?)";
+		String sql = "SELECT * FROM struts_users WHERE (loginId LIKE ? AND userName LIKE ? AND icon LIKE ? AND profile LIKE ?)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -105,6 +106,8 @@ public class SampleDBAccess2 extends DBAccess {
 
 			pstmt.setString(4, "%" + profile + "%");
 
+			//pstmt.setString(5, "%" + blood + "%");
+
 			rset = pstmt.executeQuery();
 
 			while(rset.next()) {
@@ -114,6 +117,7 @@ public class SampleDBAccess2 extends DBAccess {
 				UB2.setUserName(rset.getString(4));
 				UB2.setIcon(rset.getString(5));
 				UB2.setProfile(rset.getString(6));
+				//UB2.setBlood(rset.getString(7));
 				userlist.add(UB2);
 			}
 		} catch (Exception e) {
@@ -136,7 +140,7 @@ public class SampleDBAccess2 extends DBAccess {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
-		String sql = "SELECT * FROM users WHERE loginId=?";
+		String sql = "SELECT * FROM struts_users WHERE loginId=?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
