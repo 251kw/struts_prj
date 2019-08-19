@@ -63,13 +63,13 @@
 				<html:radio  property="blood" value="O">O型</html:radio>
 				<html:radio  property="blood" value="AB">AB型</html:radio>
 			</tr>
-			<tr>
+<%-- 			<tr>
 				<th class="bg-light">趣味</th>
 				<td><html:multibox property="hobby" value="music"/>音楽
 					<html:multibox property="hobby" value="book"/>読書
 					<html:multibox property="hobby" value="travel"/>旅行
 					</td>
-			</tr>
+			</tr> --%>
 		</table>
 		</div>
 		<br>

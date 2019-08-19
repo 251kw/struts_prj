@@ -40,10 +40,10 @@
 		<bean:write name="SampleActionForm2" property="blood" />
 		<br>
 
-		趣味　：
+<%-- 		趣味　：
 		<logic:iterate id="Hobby" name="SampleActionForm2" property="hobby">
 		<bean:write name="Hobby"/>,
-		</logic:iterate>
+		</logic:iterate> --%>
 
 		<!-- 結果画面に値を渡す --><!-- 入力画面で保持する値を渡す -->
 		<html:hidden name="SampleActionForm2" property="loginId" />
@@ -52,10 +52,9 @@
 		<html:hidden name="SampleActionForm2" property="icon" />
 		<html:hidden name="SampleActionForm2" property="profile" />
 		<html:hidden name="SampleActionForm2" property="blood" />
-		<logic:iterate id="Hobby" name="SampleActionForm2" property="hobby">
-		<html:hidden property="hobby" write="true" /><%= Hobby %>
-		</logic:iterate>
-
+<%-- 		<logic:iterate id="Hobby" name="SampleActionForm2" property="hobby">
+		<html:hidden property="hobby" value="<%=Hobby %>" />
+		</logic:iterate> --%>
 
 		<div class="text-center">
 			<html:submit property="btn">

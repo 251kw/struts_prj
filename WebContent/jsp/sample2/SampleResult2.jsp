@@ -39,17 +39,17 @@
 		血液型:
 		<bean:parameter name="blood" id="blood" /><%=blood %><br>
 
-		趣味 ：
+<!-- 		趣味 ： -->
 <%-- 		<bean:parameter name="hobby" id="hobby"/>
 		<logic:iterate id="HOBBY" collection="<%=hobby%>">
 		<bean:write name="HOBBY"/>
 		</logic:iterate> --%>
 
- 		<%String [] s = request.getParameterValues("hobby");
+ <%-- 		<%String [] s = request.getParameterValues("hobby");
  			for(String A : s){
  		%>
  		<%=A %>
- 		<%} %>
+ 		<%} %> --%>
 
 	<br>
 	<br>
